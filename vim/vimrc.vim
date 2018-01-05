@@ -36,7 +36,8 @@ set numberwidth=5
 " Redraw screen only when it needs to, it improves macro speed
 set lazyredraw
 
-" Allow better completion when in command line 
+" Allow better completion when in command line
+" by @mbrochh
 set wildmenu
 set wildignore+=*.pyc
 set wildignore+=*_build/
@@ -52,7 +53,7 @@ let mapleader = " "
 " Set edit behaviors
 set backspace=2
 set nowrap
-set textwidth=80
+set textwidth=82
 
 " Tabs settings
 set expandtab
@@ -100,12 +101,35 @@ set foldnestmax=10
 nnoremap <F2> :echo 'Current time is: ' . strftime('%c')<CR>
 
 " Use Alt + Directions to resize windows; must disable Alt usage on terminal
+" by @colbycheeze
 nnoremap <silent><Left> :vertical resize -5<CR>
 nnoremap <silent><Right> :vertical resize +5<CR>
 nnoremap <silent><Down> :resize -5<CR>
 nnoremap <silent><Up> :resize +5<CR>
 
-" TODO: NumberToggle, map numbertoggle, map relativenumbertoggle
+" Toggle number on and off
+function! NumberToggle()
+    set nu!
+    if &rnu
+        set nornu
+    endif
+endfunction
+nnoremap <silent><Leader>n :call NumberToggle()<CR>
+
+" Toggle relativenumber on and off 
+function! RelativeToggle()
+    set nu
+    set rnu!
+endfunction
+nnoremap <silent><Leader>rn :call RelativeToggle()<CR>
+
+" Auto number toggle when switching windows
+" by @jeffkeeiftmeijer 
+augroup numbertoggle
+    autocmd!
+    autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu | set rnu | endif
+    autocmd BufLeave,FocusLost,InsertEnter,WinLeave * if &nu | set nornu | endif
+augroup END
 
 
 """""""""""""""""""""""""""""""
@@ -116,7 +140,7 @@ nnoremap <silent><Up> :resize +5<CR>
 nnoremap <silent><leader>, :noh<cr>
 
 " Use tab to jump between blocks, because it's easier
-nnoremap <tab> %  
+nnoremap <tab> %
 vnoremap <tab> %
 
 " Folding shortcuts
@@ -144,7 +168,11 @@ nnoremap <Leader><BS> O<ESC>
 nnoremap <Leader>o O<Esc>o
 nnoremap <Leader>i o<CR>
 
+" Better space insertion
+nnoremap <Leader><Space> a<Space>
+
 " Better selection and indentation
+" by @mbrochh
 vnoremap < <gv
 vnoremap > >gv
 map <Leader>a ggVG
@@ -162,8 +190,8 @@ vnoremap <Leader>s :sort<CR>
 "map <Leader>p :set paste<CR>o<esc>"*]p:set nopaste<cr>"
 "map <leader><s-p> :set paste<cr>o<esc>"*]p:set nopaste<cr>"
 
-" Paste in command mode: TODO
-" cnoremap <C-v> "p 
+" TODO: Paste in command mode 
+" Use register to paste content in command line 
 
 
 """""""""""""""""""""""""""""""
@@ -177,8 +205,8 @@ vnoremap <Leader>w <C-c>:update<CR>
 
 " Quick quit command
 nnoremap <Leader>q :quit<CR>
+nnoremap <Leader>Q :q!<CR>
 nnoremap <Leader>x :x<CR>
-nnoremap <Leader>X :q!<CR>
 
-" todo: move lines up and down
-" move sentence up to EOL from the cursor UP or DOWN
+" TODO: move lines up and down
+" TODO: move sentence up to EOL from the cursor UP or DOWN
