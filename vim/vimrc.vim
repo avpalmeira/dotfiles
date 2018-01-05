@@ -112,6 +112,8 @@ vnoremap <C-c> "*y
 map <silent><Leader>p :set paste<CR>o<esc>"*]p:set nopaste<cr>"
 map <silent><Leader><S-p> :set paste<CR>O<esc>"*]p:set nopaste<cr>"
 
+" Maps F2 key to show current time
+nnoremap <F2> :echo 'Current time is: ' . strftime('%c')<CR>
 
 " Quick quit command
 noremap <Leader>e :quit<CR>
