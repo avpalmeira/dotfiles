@@ -1,0 +1,21 @@
+!
+! Swap Caps_Lock and Escape
+!
+remove Lock = Caps_Lock
+keysym Escape = Caps_Lock
+keysym Caps_Lock = Escape
+add Lock = Caps_Lock
+
+!
+! Adapt keys for german keyboard
+!
+keycode 49 = dead_circumflex asciitilde
+keycode 47 = bracketleft braceleft
+keycode 48 = bracketright braceright
+keycode 34 = quotedbl backslash
+keycode 20 = bar question
+keycode 11 = 2 at
+
+! For changes to be permanent:
+!   * create file .xinitrc inside home directory
+!   * put this command inside file: xmodmap ~/.Xmodmap
