@@ -9,7 +9,7 @@ add Lock = Caps_Lock
 !
 ! Adapt keys for german keyboard
 !
-keycode 49 = dead_circumflex asciitilde
+keycode 49 = asciicircum asciitilde
 keycode 47 = bracketleft braceleft
 keycode 48 = bracketright braceright
 keycode 34 = quotedbl backslash

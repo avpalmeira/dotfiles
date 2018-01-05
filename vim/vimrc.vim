@@ -6,17 +6,13 @@
 
 set nocompatible
 set encoding=utf-8
-filetype plugin indent on
+filetype plugin on
 syntax on
 
 " Disable backup and swap files
 set nobackup
 set nowritebackup
 set noswapfile
-
-" Auto read or write file when focusing on other buffer
-set autoread
-set autowrite 
 
 " Set buffer to remembers last moves
 set history=500
@@ -37,6 +33,14 @@ set number
 set relativenumber
 set numberwidth=5
 
+" Redraw screen only when it needs to, it improves macro speed
+set lazyredraw
+
+" Allow better completion when in command line 
+set wildmenu
+set wildignore+=*.pyc
+set wildignore+=*_build/
+
 
 """""""""""""""""""""""""""""""
 ""       Key behaviors        "
@@ -56,6 +60,12 @@ set shiftround
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
+filetype indent on
+
+" Allow better scrolling when close to margins
+set sidescroll=1
+set scrolloff=4
+set sidescrolloff=15
 
 " Search settings
 set gdefault
@@ -68,12 +78,34 @@ set showmatch
 " Set yank copy to the global system clipboard
 set clipboard=unnamed
 
+" Auto-updates file when it is changed by other editor
+set autoread
+
 " Open new split panes to right and bottom, which feels more natural
 set splitbelow
 set splitright
 
+" Fold settings
+set foldenable
+set foldmethod=indent
+set foldlevelstart=10
+set foldnestmax=10
+
+
+"""""""""""""""""""""""""""""""
+""      Map - Interface       "
+"""""""""""""""""""""""""""""""
+
 " Maps F2 key to show current time
 nnoremap <F2> :echo 'Current time is: ' . strftime('%c')<CR>
+
+" Use Alt + Directions to resize windows; must disable Alt usage on terminal
+nnoremap <silent><Left> :vertical resize -5<CR>
+nnoremap <silent><Right> :vertical resize +5<CR>
+nnoremap <silent><Down> :resize -5<CR>
+nnoremap <silent><Up> :resize +5<CR>
+
+" TODO: NumberToggle, map numbertoggle, map relativenumbertoggle
 
 
 """""""""""""""""""""""""""""""
@@ -81,17 +113,22 @@ nnoremap <F2> :echo 'Current time is: ' . strftime('%c')<CR>
 """""""""""""""""""""""""""""""
 
 " Set highligthing off
-nnoremap <leader>, :noh<cr>
+nnoremap <silent><leader>, :noh<cr>
 
 " Use tab to jump between blocks, because it's easier
 nnoremap <tab> %  
 vnoremap <tab> %
 
+" Folding shortcuts
+nnoremap <Leader>z zA
+vnoremap <Leader>z zA
+autocmd BufRead * normal zR
+
 " Navigate quicker to buffer extremes
 nnoremap <Leader>l $
 nnoremap <Leader>j G
 nnoremap <Leader>k gg 
-"nnoremap <Leader>h 0 " bug
+nnoremap <Leader>h ^
 
 " Quicker window movement
 nnoremap <C-j> <C-w>j
@@ -103,19 +140,27 @@ nnoremap <C-l> <C-w>l
 nnoremap <Leader><CR> o<ESC>
 nnoremap <Leader><BS> O<ESC>
 
+" Better insertion of paragraphs
+nnoremap <Leader>o O<Esc>o
+nnoremap <Leader>i o<CR>
+
 " Better selection and indentation
 vnoremap < <gv
 vnoremap > >gv
 map <Leader>a ggVG
 
+" Sort selection
+vnoremap <Leader>s :sort<CR>
+
+
 """""""""""""""""""""""""""""""
 ""    Map - Copy and Paste    "
 """""""""""""""""""""""""""""""
 
-" Copy paste to/from clipboard
-vnoremap <C-c> "*y
-map <silent><Leader>p :set paste<CR>o<esc>"*]p:set nopaste<cr>"
-map <silent><Leader><S-p> :set paste<CR>O<esc>"*]p:set nopaste<cr>"
+" Copy paste to/from clipboard; does not work inside vm
+"vnoremap <C-c> "*y
+"map <Leader>p :set paste<CR>o<esc>"*]p:set nopaste<cr>"
+"map <leader><s-p> :set paste<cr>o<esc>"*]p:set nopaste<cr>"
 
 " Paste in command mode: TODO
 " cnoremap <C-v> "p 
@@ -126,12 +171,12 @@ map <silent><Leader><S-p> :set paste<CR>O<esc>"*]p:set nopaste<cr>"
 """""""""""""""""""""""""""""""
 
 " Quick save command
-nnoremap <Leader>s :update<CR>
-vnoremap <Leader>s <C-c>:update<CR>
-"inoremap <Leader>s <C-o>:update<CR>
+nnoremap <Leader>w :update<CR>
+vnoremap <Leader>w <C-c>:update<CR>
+"inoremap <Leader>w <C-o>:update<CR>
 
 " Quick quit command
-nnoremap <Leader>e :quit<CR>
+nnoremap <Leader>q :quit<CR>
 nnoremap <Leader>x :x<CR>
 nnoremap <Leader>X :q!<CR>
 
