@@ -1,6 +1,5 @@
 " Type :so % to refresh .vimrc after making changes
 
-
 """""""""""""""""""""""""""""""
 ""    VIM General Settings    "
 """""""""""""""""""""""""""""""
@@ -59,12 +58,12 @@ set softtabstop=4
 set shiftwidth=4
 
 " Search settings
-set gdefault        " searches whole line by default 
-set ignorecase      " case insensitive searching
+set gdefault
+set ignorecase
 set smartcase
 set hlsearch
 set incsearch
-set showmatch       " highlight matching bracket
+set showmatch
 
 " Set yank copy to the global system clipboard
 set clipboard=unnamed
@@ -72,6 +71,9 @@ set clipboard=unnamed
 " Open new split panes to right and bottom, which feels more natural
 set splitbelow
 set splitright
+
+" Maps F2 key to show current time
+nnoremap <F2> :echo 'Current time is: ' . strftime('%c')<CR>
 
 
 """""""""""""""""""""""""""""""
@@ -85,11 +87,11 @@ nnoremap <leader>, :noh<cr>
 nnoremap <tab> %  
 vnoremap <tab> %
 
-
-nnoremap <Leader>h 0 " bug
+" Navigate quicker to buffer extremes
 nnoremap <Leader>l $
 nnoremap <Leader>j G
 nnoremap <Leader>k gg 
+"nnoremap <Leader>h 0 " bug
 
 " Quicker window movement
 nnoremap <C-j> <C-w>j
@@ -97,25 +99,41 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
-" Paste in command mode
-" cnoremap <C-v> "p 
+" Use enter and backspace to create line w/o leaving normal mode
+nnoremap <Leader><CR> o<ESC>
+nnoremap <Leader><BS> O<ESC>
 
-" Quicksave command
-"nnoremap <C-s> :update<CR>
-"vnoremap <C-s> <C-c>:update<CR>
-"inoremap <C-s> <C-o>:update<CR>
-"map <leader>s <C-S>
+" Better selection and indentation
+vnoremap < <gv
+vnoremap > >gv
+map <Leader>a ggVG
 
+"""""""""""""""""""""""""""""""
+""    Map - Copy and Paste    "
+"""""""""""""""""""""""""""""""
 
 " Copy paste to/from clipboard
 vnoremap <C-c> "*y
 map <silent><Leader>p :set paste<CR>o<esc>"*]p:set nopaste<cr>"
 map <silent><Leader><S-p> :set paste<CR>O<esc>"*]p:set nopaste<cr>"
 
-" Maps F2 key to show current time
-nnoremap <F2> :echo 'Current time is: ' . strftime('%c')<CR>
+" Paste in command mode: TODO
+" cnoremap <C-v> "p 
+
+
+"""""""""""""""""""""""""""""""
+""    Map - Save and Quit     "
+"""""""""""""""""""""""""""""""
+
+" Quick save command
+nnoremap <Leader>s :update<CR>
+vnoremap <Leader>s <C-c>:update<CR>
+"inoremap <Leader>s <C-o>:update<CR>
 
 " Quick quit command
-noremap <Leader>e :quit<CR>
+nnoremap <Leader>e :quit<CR>
+nnoremap <Leader>x :x<CR>
+nnoremap <Leader>X :q!<CR>
+
 " todo: move lines up and down
 " move sentence up to EOL from the cursor UP or DOWN
