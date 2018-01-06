@@ -18,10 +18,18 @@ set noswapfile
 set history=500
 set undolevels=500
 
+" Load up all of plugins
+if filereadable(expand("~/.vimrc.bundles"))
+    source ~/.vimrc.bundles
+endif
+
 
 """""""""""""""""""""""""""""""
 ""     Interface settings     "
 """""""""""""""""""""""""""""""
+
+" Set colorscheme
+colorscheme seoul256
 
 " Show status and ruler below window
 set ruler

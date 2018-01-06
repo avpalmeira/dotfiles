@@ -1,0 +1,30 @@
+"" Vim puglins configuration file
+
+" Auto-install vim-plug and place it on ~/.vim/autoload
+" PS: make sure curl is installed
+if empty(glob('~/.vim/autoload/plug.vim'))
+    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+      \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+" Declare plugins
+call plug#begin('~/.vim/plugged')
+
+" Distraction free plugins
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
+
+" Color schemes
+Plug 'sjl/badwolf'
+Plug 'nightsense/stellarized'
+Plug 'junegunn/seoul256.vim'
+Plug 'dylanaraps/crayon'
+
+" Allow better navigation in vim
+Plug 'scrooloose/nerdtree'
+Plug 'easymotion/vim-easymotion'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'sjl/gundo.vim'
+
+call plug#end()
