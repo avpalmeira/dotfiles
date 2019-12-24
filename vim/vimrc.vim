@@ -108,7 +108,7 @@ set foldnestmax=10
 " Maps F2 key to show current time
 nnoremap <F2> :echo 'Current time is: ' . strftime('%c')<CR>
 
-" Use Alt + Directions to resize windows; must disable Alt usage on terminal
+" Use Directions to resize windows;
 " by @colbycheeze
 nnoremap <silent><Left> :vertical resize -5<CR>
 nnoremap <silent><Right> :vertical resize +5<CR>
@@ -173,7 +173,7 @@ nnoremap <Leader><CR> o<ESC>
 nnoremap <Leader><BS> O<ESC>
 
 " Better insertion of paragraphs
-nnoremap <Leader>o O<Esc>o
+nnoremap <Leader>O O<Esc>o
 nnoremap <Leader>i o<CR>
 
 " Better space insertion
@@ -222,4 +222,7 @@ nnoremap <Leader>x :x<CR>
 """""""""""""""""""""""""""""""
 
 " Toggle NERDTree
-map <C-n> :NERDTreeToggle<CR>
+nnoremap <C-n> :NERDTreeToggle<CR>
+
+" Toggle Undotree
+nnoremap <F5> :UndotreeToggle<CR>
