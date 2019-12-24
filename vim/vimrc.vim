@@ -29,7 +29,7 @@ endif
 """""""""""""""""""""""""""""""
 
 " Set colorscheme
-colorscheme seoul256
+colorscheme badwolf
 
 " Show status and ruler below window
 set ruler
@@ -177,7 +177,7 @@ nnoremap <Leader>o O<Esc>o
 nnoremap <Leader>i o<CR>
 
 " Better space insertion
-nnoremap <Leader><Space> a<Space>
+" nnoremap <Leader><Space> a<Space>
 
 " Better selection and indentation
 " by @mbrochh
@@ -216,5 +216,10 @@ nnoremap <Leader>q :quit<CR>
 nnoremap <Leader>Q :q!<CR>
 nnoremap <Leader>x :x<CR>
 
-" TODO: move lines up and down
-" TODO: move sentence up to EOL from the cursor UP or DOWN
+
+"""""""""""""""""""""""""""""""
+""       Map - Plugins        "
+"""""""""""""""""""""""""""""""
+
+" Toggle NERDTree
+map <C-n> :NERDTreeToggle<CR>

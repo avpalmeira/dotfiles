@@ -25,6 +25,6 @@ Plug 'dylanaraps/crayon'
 Plug 'scrooloose/nerdtree'
 Plug 'easymotion/vim-easymotion'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'sjl/gundo.vim'
+Plug 'mbbill/undotree/'
 
 call plug#end()
