@@ -11,16 +11,18 @@ add Lock = Caps_Lock
 !
 ! ° > ~
 keycode 49 = asciicircum asciitilde
-! ö > [ {
-keycode 47 = bracketleft braceleft
-! ä > ] }
-keycode 48 = bracketright braceright
-! ü > " \
-keycode 34 = quotedbl backslash
-! ß > |
-keycode 20 = bar question
+! ö > [ { (
+keycode 47 = bracketleft braceleft bracketleft braceleft parenleft
+! ä > ] } )
+keycode 48 = bracketright braceright bracketright braceright parenright
+! ü > " / \
+keycode 34 = quotedbl slash quotedbl slash backslash
+! ß > | ? \
+keycode 20 = bar question bar question backslash
+! § > /
+keycode 12 = 3 slash 3 slash threesuperior
 ! " > @
-keycode 11 = 2 at
+keycode 11 = 2 at 2 at twosuperior
 
 ! For changes to be permanent:
 !   * create file .xinitrc inside home directory

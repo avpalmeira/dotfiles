@@ -14,4 +14,5 @@ alias cfv='vim ~/.vimrc'
 alias cfb='vim ~/.bashrc'
 alias cfa='vim ~/.bash_aliases'
 alias cfg='vim ~/.gitconfig'
+alias cfm='vim ~/.Xmodmap'
 
