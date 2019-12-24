@@ -1,0 +1,17 @@
+# Custom aliases
+
+# Navigation
+alias h='cd ~'
+alias b='cd ..'
+alias p='cd -'
+
+# Favorite folders
+alias dev='cd ~/local-dev'
+alias dot='cd ~/dotfiles'
+
+# Edit config files
+alias cfv='vim ~/.vimrc'
+alias cfb='vim ~/.bashrc'
+alias cfa='vim ~/.bash_aliases'
+alias cfg='vim ~/.gitconfig'
+
