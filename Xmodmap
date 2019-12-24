@@ -9,11 +9,17 @@ add Lock = Caps_Lock
 !
 ! Adapt keys for german keyboard
 !
+! ° > ~
 keycode 49 = asciicircum asciitilde
+! ö > [ {
 keycode 47 = bracketleft braceleft
+! ä > ] }
 keycode 48 = bracketright braceright
+! ü > " \
 keycode 34 = quotedbl backslash
+! ß > |
 keycode 20 = bar question
+! " > @
 keycode 11 = 2 at
 
 ! For changes to be permanent:
