@@ -1,0 +1,11 @@
+!
+! Swap Caps_Lock and Escape
+!
+remove Lock = Caps_Lock
+keysym Escape = Caps_Lock
+keysym Caps_Lock = Escape
+add Lock = Caps_Lock
+
+! For changes to be permanent:
+!   * create file .xinitrc inside home directory
+!   * put this command inside file: xmodmap ~/.Xmodmap
