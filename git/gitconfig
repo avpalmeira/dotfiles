@@ -14,3 +14,9 @@
 	conflist = config --global --list
 	authorlog = "!f() { git log --author=\"$1\"; }; f"
 
+[core]
+    autocrlf = input
+
+[credential]
+    helper = cache --timeout 7200
+
