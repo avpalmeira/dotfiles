@@ -1,4 +1,3 @@
-" Type :so % to refresh .vimrc after making changes
 
 """""""""""""""""""""""""""""""
 ""    VIM General Settings    "
@@ -31,10 +30,13 @@ endif
 " Set colorscheme
 colorscheme badwolf
 
-" Show status and ruler below window
+" Show status and cursor position below window
 set ruler
 set laststatus=2
+
+" Show incomplete command and enable autocomplete
 set showcmd
+set wildmenu
 
 " Show numbers on the side
 set number
@@ -44,15 +46,9 @@ set numberwidth=5
 " Redraw screen only when it needs to, it improves macro speed
 set lazyredraw
 
-" Allow better completion when in command line
-" by @mbrochh
-set wildmenu
-set wildignore+=*.pyc
-set wildignore+=*_build/
-
 
 """""""""""""""""""""""""""""""
-""       Key behaviors        "
+""         Behaviors          "
 """""""""""""""""""""""""""""""
 
 " Setting mapleader to <Space>
@@ -108,8 +104,7 @@ set foldnestmax=10
 " Maps F2 key to show current time
 nnoremap <F2> :echo 'Current time is: ' . strftime('%c')<CR>
 
-" Use Directions to resize windows;
-" by @colbycheeze
+" Use Directions to resize windows
 nnoremap <silent><Left> :vertical resize -5<CR>
 nnoremap <silent><Right> :vertical resize +5<CR>
 nnoremap <silent><Down> :resize -5<CR>
@@ -132,7 +127,6 @@ endfunction
 nnoremap <silent><Leader>rn :call RelativeToggle()<CR>
 
 " Auto number toggle when switching windows
-" by @jeffkeeiftmeijer 
 augroup numbertoggle
     autocmd!
     autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu | set rnu | endif
@@ -180,7 +174,6 @@ nnoremap <Leader>i o<CR>
 " nnoremap <Leader><Space> a<Space>
 
 " Better selection and indentation
-" by @mbrochh
 vnoremap < <gv
 vnoremap > >gv
 map <Leader>a ggVG
@@ -188,6 +181,14 @@ map <Leader>a ggVG
 " Sort selection
 vnoremap <Leader>s :sort<CR>
 
+" Go to marked line
+nnoremap \ `
+
+" Go to last cursor position
+nnoremap <Leader>\ <C-o>
+
+" Redo
+nnoremap U <C-r>
 
 """""""""""""""""""""""""""""""
 ""    Map - Copy and Paste    "
@@ -226,3 +227,17 @@ nnoremap <C-n> :NERDTreeToggle<CR>
 
 " Toggle Undotree
 nnoremap <F5> :UndotreeToggle<CR>
+
+" Toggle Goyo
+nnoremap <Leader>g :Goyo<CR>
+
+" Toggle Limelight
+nnoremap <Leader>l :Limelight!!<CR>
+
+" Invoke CtrlP
+let g:ctrlp_map = '<C-p>'
+let g:ctrlp_cmd = 'CtrlP'
+
+" Disable EasyMotion default mappings
+"let g:EasyMotion_do_mapping = 0
+
