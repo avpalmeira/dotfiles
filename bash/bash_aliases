@@ -1,9 +1,21 @@
 # Custom aliases
 
+# Terminal
+alias c='clear'
+
 # Navigation
 alias h='cd ~'
 alias b='cd ..'
 alias p='cd -'
+
+# Installation
+alias get='sudo apt-get install -y'
+alias rem='sudo apt-get remove -y'
+alias up='sudo apt-get update'
+
+# Power
+alias off='sudo shutdown -h now'
+alias re='sudo reboot'
 
 # Favorite folders
 alias dev='cd ~/local-dev'
@@ -15,4 +27,5 @@ alias cfb='vim ~/.bashrc'
 alias cfa='vim ~/.bash_aliases'
 alias cfg='vim ~/.gitconfig'
 alias cfm='vim ~/.Xmodmap'
+alias cfx='vim ~/.xsessionrc'
 
