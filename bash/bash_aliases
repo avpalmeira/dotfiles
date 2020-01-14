@@ -14,8 +14,8 @@ alias rem='sudo apt-get remove -y'
 alias up='sudo apt-get update'
 
 # Power
-alias off='sudo shutdown -h now'
-alias re='sudo reboot'
+alias off='shutdown -h now'
+alias re='reboot'
 
 # Favorite folders
 alias dev='cd ~/local-dev'
