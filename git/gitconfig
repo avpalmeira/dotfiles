@@ -10,6 +10,8 @@
 	a = add -A
 	ci = commit
 	cm = commit -m
+	px = push -u origin HEAD
+	pl = pull
 	ac = !git add -A && git commit
 	curr = rev-parse --abbrev-ref HEAD
 	hist = log --color --graph --pretty=format:'%C(magenta)%h%Creset - %C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
