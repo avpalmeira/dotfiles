@@ -3,6 +3,7 @@
 	st = status
 	br = branch
 	brs = branch -a
+	brd = branch -d
 	cob = checkout -b
 	last = log -1 HEAD
 	visual = !gitk
@@ -10,6 +11,9 @@
 	ci = commit
 	cm = commit -m
 	ac = !git add -A && git commit -m
+	px = push -u origin HEAD
+	pl = pull
+	curr = rev-parse --abbrev-ref HEAD
 	hist = log --color --graph --pretty=format:'%C(magenta)%h%Creset - %C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 	conflist = config --global --list
 	authorlog = "!f() { git log --author=\"$1\"; }; f"
