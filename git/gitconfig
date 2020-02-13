@@ -9,7 +9,7 @@
 	a = add -A
 	ci = commit
 	cm = commit -m
-	ac = !git add -A && git commit
+	ac = !git add -A && git commit -m
 	hist = log --color --graph --pretty=format:'%C(magenta)%h%Creset - %C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 	conflist = config --global --list
 	authorlog = "!f() { git log --author=\"$1\"; }; f"

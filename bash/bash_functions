@@ -1,0 +1,6 @@
+# System functions
+
+# Run vagrant command on main development VM
+function hs() {
+    ( cd $HOME/homestead && vagrant $* )
+}

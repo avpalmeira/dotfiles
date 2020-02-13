@@ -28,4 +28,11 @@ alias cfa='vim ~/.bash_aliases'
 alias cfg='vim ~/.gitconfig'
 alias cfm='vim ~/.Xmodmap'
 alias cfx='vim ~/.xsessionrc'
+alias cfhs='vim ~/homestead/Homestead.yaml'
+alias cfh='sudo vim /etc/hosts'
+
+# Vagrant commands
+alias hsup='hs up'
+alias hssh='hs ssh'
+alias hstop='hs halt'
 
