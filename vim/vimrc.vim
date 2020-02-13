@@ -229,10 +229,10 @@ nnoremap <C-n> :NERDTreeToggle<CR>
 nnoremap <F5> :UndotreeToggle<CR>
 
 " Toggle Goyo
-nnoremap <Leader>g :Goyo<CR>
+nnoremap <Leader>- :Goyo<CR>
 
 " Toggle Limelight
-nnoremap <Leader>l :Limelight!!<CR>
+nnoremap <Leader>+ :Limelight!!<CR>
 
 " Invoke CtrlP
 let g:ctrlp_map = '<C-p>'
