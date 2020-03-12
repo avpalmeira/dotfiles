@@ -1,5 +1,5 @@
 # set PATH
-export JAVA_HOME=$HOME/java/jdk-11.0.6+10
+export JAVA_HOME=$HOME/java/jdk8
 export ANDROID_HOME=$HOME/Android/Sdk
 
 export PATH=$PATH:$ANDROID_HOME/emulator
