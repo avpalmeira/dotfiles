@@ -7,7 +7,7 @@ keysym Caps_Lock = Escape
 add Lock = Caps_Lock
 
 !
-! Adapt keys for german keyboard
+! Adapt keys in german keyboard
 !
 ! ° > ~
 keycode 49 = asciicircum asciitilde
@@ -23,6 +23,22 @@ keycode 20 = bar question bar question backslash
 keycode 12 = 3 slash 3 slash threesuperior
 ! " > @
 keycode 11 = 2 at 2 at twosuperior
+
+!
+! Adapt to use keys in portuguese alphabet
+!
+! # > ... ç
+keysym c = c C c C ccedilla Ccedilla
+! a > ... â
+keysym a = a A a A acircumflex Acircumflex
+! e > ... ê
+keysym e = e E e E ecircumflex Ecircumflex
+! o > ... ô
+keysym o = o O o O ocircumflex Ocircumflex
+! , > ... ã
+keycode 59 = comma semicolon comma semicolon atilde Atilde
+! . > ... õ
+keycode 60 = period colon period colon otilde Otilde
 
 ! For changes to be permanent:
 !   * create file .xinitrc inside home directory
