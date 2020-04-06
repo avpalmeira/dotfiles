@@ -10,6 +10,7 @@ alias p='cd -'
 
 # Installation
 alias get='sudo apt-get install -y'
+alias repo='sudo add-apt-repository'
 alias rem='sudo apt-get remove -y'
 alias up='sudo apt-get update'
 
