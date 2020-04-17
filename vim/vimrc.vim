@@ -194,13 +194,16 @@ nnoremap U <C-r>
 ""    Map - Copy and Paste    "
 """""""""""""""""""""""""""""""
 
-" Copy paste to/from clipboard; does not work inside vm
-"vnoremap <C-c> "*y
-"map <Leader>p :set paste<CR>o<esc>"*]p:set nopaste<cr>"
-"map <leader><s-p> :set paste<cr>o<esc>"*]p:set nopaste<cr>"
+" swap word on top of cursor to the one in default register
+nnoremap <leader>P viwp
 
-" TODO: Paste in command mode 
-" Use register to paste content in command line 
+" substitute word on top of cursor by the one in alternative (a) register
+nnoremap <leader>p viw"ap
+
+" copy word to alternative (a) register
+nnoremap <leader>y "ayiw
+
+" TODO: Paste in command mode
 
 
 """""""""""""""""""""""""""""""
