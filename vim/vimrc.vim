@@ -6,7 +6,6 @@
 set nocompatible
 set encoding=utf-8
 filetype plugin on
-syntax on
 
 " Disable backup and swap files
 set nobackup
@@ -16,6 +15,9 @@ set noswapfile
 " Set buffer to remembers last moves
 set history=500
 set undolevels=500
+
+" Enable mouse support
+" set mouse=a
 
 " Load up all of plugins
 if filereadable(expand("~/.vimrc.bundles"))
@@ -28,7 +30,8 @@ endif
 """""""""""""""""""""""""""""""
 
 " Set colorscheme
-colorscheme badwolf
+syntax on
+colorscheme dracula
 
 " Show status and cursor position below window
 set ruler
@@ -56,8 +59,11 @@ let mapleader = " "
 
 " Set edit behaviors
 set backspace=2
-set nowrap
-set textwidth=82
+set wrap
+set linebreak
+set textwidth=0
+set wrapmargin=0
+set colorcolumn=82
 
 " Tabs settings
 set expandtab
@@ -69,9 +75,9 @@ set autoindent
 filetype indent on
 
 " Allow better scrolling when close to margins
-set sidescroll=1
 set scrolloff=4
-set sidescrolloff=15
+" set sidescroll=1
+" set sidescrolloff=15
 
 " Search settings
 set gdefault
@@ -120,7 +126,7 @@ function! NumberToggle()
 endfunction
 nnoremap <silent><Leader>n :call NumberToggle()<CR>
 
-" Toggle relativenumber on and off 
+" Toggle relativenumber on and off
 function! RelativeToggle()
     set nu
     set rnu!
@@ -154,7 +160,7 @@ autocmd BufRead * normal zR
 " Navigate quicker to buffer extremes
 nnoremap <Leader>l $
 nnoremap <Leader>j G
-nnoremap <Leader>k gg 
+nnoremap <Leader>k gg
 nnoremap <Leader>h ^
 
 " Quicker window movement
@@ -201,7 +207,7 @@ nnoremap <leader>P viwp
 " copy word to default register
 nnoremap <leader>Y yiw
 
-" substitute word on top of cursor / selection 
+" substitute word on top of cursor / selection
 " by the one in alternative (a) register
 nnoremap <leader>p viw"ap
 vnoremap <leader>p "ap
@@ -256,9 +262,11 @@ let g:ctrlp_cmd = 'CtrlP'
 ""      Config - Plugins      "
 """""""""""""""""""""""""""""""
 
+""      NERDTree Configs      "
+
 " Sync open file with NERDTree
 " Check if NERDTree is open or active
-function! IsNERDTreeOpen()        
+function! IsNERDTreeOpen()
     return exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
 endfunction
 
@@ -277,13 +285,13 @@ autocmd BufEnter * call SyncTree()
 " When executing 'vim <some-dir>' it will open NERDTree
 function! AutoOpenNERDTree()
     if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in")
-        exe 'NERDTree' argv()[0] 
+        exe 'NERDTree' argv()[0]
         wincmd p
         ene
         exe 'cd '.argv()[0]
     endif
 endfunction
-    
+
 " Open NERDTree automatically when vim starts up on opening a directory
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * call AutoOpenNERDTree()
@@ -295,3 +303,21 @@ function! CloseWhenTheresOnlyNERDTree()
     endif
 endfunction
 autocmd BufEnter * call CloseWhenTheresOnlyNERDTree()
+
+
+""         ALE Configs        "
+
+" Enable completion where available
+let g:ale_completion_enabled = 1
+
+" Config fixers
+let g:ale_fixers = {
+\   '*': ['trim_whitespace'],
+\   'javascript': ['prettier', 'eslint'],
+\}
+
+" Set this variable to 1 to fix files when you save them.
+let g:ale_fix_on_save = 1
+
+" Allow for ALE Hover to show balloons on mouse hover
+" let g:ale_set_balloons = 1

@@ -20,6 +20,7 @@ Plug 'sjl/badwolf'
 Plug 'nightsense/stellarized'
 Plug 'junegunn/seoul256.vim'
 Plug 'dylanaraps/crayon'
+Plug 'dracula/vim', {'as': 'dracula'}
 
 " Better navigation in vim
 Plug 'scrooloose/nerdtree'
@@ -30,6 +31,7 @@ Plug 'mbbill/undotree/'
 " Better editing
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
+Plug 'dense-analysis/ale'
 
 " Better git integration
 Plug 'Xuyuanp/nerdtree-git-plugin'
