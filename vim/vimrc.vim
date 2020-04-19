@@ -288,3 +288,10 @@ endfunction
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * call AutoOpenNERDTree()
 
+" Close vim if the only window left open is NERDTree
+function! CloseWhenTheresOnlyNERDTree()
+    if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree())
+        q
+    endif
+endfunction
+autocmd BufEnter * call CloseWhenTheresOnlyNERDTree()
