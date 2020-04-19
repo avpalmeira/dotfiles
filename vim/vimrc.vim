@@ -65,6 +65,7 @@ set shiftround
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
+set autoindent
 filetype indent on
 
 " Allow better scrolling when close to margins
@@ -197,11 +198,17 @@ nnoremap U <C-r>
 " swap word on top of cursor to the one in default register
 nnoremap <leader>P viwp
 
-" substitute word on top of cursor by the one in alternative (a) register
-nnoremap <leader>p viw"ap
+" copy word to default register
+nnoremap <leader>Y yiw
 
-" copy word to alternative (a) register
+" substitute word on top of cursor / selection 
+" by the one in alternative (a) register
+nnoremap <leader>p viw"ap
+vnoremap <leader>p "ap
+
+" copy word / selection to alternative (a) register
 nnoremap <leader>y "ayiw
+vnoremap <leader>y "ay
 
 " TODO: Paste in command mode
 

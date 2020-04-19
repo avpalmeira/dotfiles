@@ -21,10 +21,18 @@ Plug 'nightsense/stellarized'
 Plug 'junegunn/seoul256.vim'
 Plug 'dylanaraps/crayon'
 
-" Allow better navigation in vim
+" Better navigation in vim
 Plug 'scrooloose/nerdtree'
 Plug 'easymotion/vim-easymotion'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'mbbill/undotree/'
+
+" Better editing
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
+
+" Better git integration
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'tpope/vim-fugitive'
 
 call plug#end()
