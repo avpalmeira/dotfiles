@@ -251,3 +251,40 @@ let g:ctrlp_cmd = 'CtrlP'
 " Disable EasyMotion default mappings
 "let g:EasyMotion_do_mapping = 0
 
+
+"""""""""""""""""""""""""""""""
+""      Config - Plugins      "
+"""""""""""""""""""""""""""""""
+
+" Sync open file with NERDTree
+" Check if NERDTree is open or active
+function! IsNERDTreeOpen()        
+    return exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
+endfunction
+
+" Call NERDTreeFind if NERDTree is active, current window contains a modifiable
+" file and we're not in vimdiff
+function! SyncTree()
+    if &modifiable && IsNERDTreeOpen() && strlen(expand('%')) > 0 && !&diff
+        NERDTreeFind
+        wincmd p
+    endif
+endfunction
+
+" Highlight currently open buffer in NERDTree
+autocmd BufEnter * call SyncTree()
+
+" When executing 'vim <some-dir>' it will open NERDTree
+function! AutoOpenNERDTree()
+    if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in")
+        exe 'NERDTree' argv()[0] 
+        wincmd p
+        ene
+        exe 'cd '.argv()[0]
+    endif
+endfunction
+    
+" Open NERDTree automatically when vim starts up on opening a directory
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * call AutoOpenNERDTree()
+
