@@ -169,12 +169,30 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
+" Create new tab
+nnoremap <Leader>t :tabnew<Space>
+
+" Go to marked line
+nnoremap \ `
+
+" Go to last cursor position
+" nnoremap <Leader>\ <C-o>
+
+
+"""""""""""""""""""""""""""""""
+""        Map - Editing       "
+"""""""""""""""""""""""""""""""
+
+" Delete to begining of the line
+nnoremap <BS> d0
+nnoremap <Leader><BS> cc<ESC>
+
 " Use enter and backspace to create line w/o leaving normal mode
-nnoremap <Leader><CR> o<ESC>
-nnoremap <Leader><BS> O<ESC>
+nnoremap <Leader>o o<ESC>
+nnoremap <Leader>O O<ESC>
 
 " Better insertion of paragraphs
-nnoremap <Leader>O O<Esc>o
+nnoremap <Leader><CR> O<Esc>o
 nnoremap <Leader>i o<CR>
 
 " Better space insertion
@@ -188,14 +206,12 @@ map <Leader>a ggVG
 " Sort selection
 vnoremap <Leader>s :sort<CR>
 
-" Go to marked line
-nnoremap \ `
-
-" Go to last cursor position
-nnoremap <Leader>\ <C-o>
+" Source current file
+nnoremap <Leader>S :source %<CR>
 
 " Redo
 nnoremap U <C-r>
+
 
 """""""""""""""""""""""""""""""
 ""    Map - Copy and Paste    "
@@ -254,6 +270,13 @@ nnoremap <Leader>+ :Limelight!!<CR>
 let g:ctrlp_map = '<C-p>'
 let g:ctrlp_cmd = 'CtrlP'
 
+" Use ALE autocompletion
+inoremap <C-Space> <C-x><C-o>
+imap <C-@> <C-Space>
+
+" Save bookmark when on NERDTree buffer
+nnoremap <C-b> :Bookmark<Space>
+
 " Disable EasyMotion default mappings
 "let g:EasyMotion_do_mapping = 0
 
@@ -309,6 +332,9 @@ autocmd BufEnter * call CloseWhenTheresOnlyNERDTree()
 
 " Enable completion where available
 let g:ale_completion_enabled = 1
+
+" Set omni-completion function
+set omnifunc=ale#completion#OmniFunc
 
 " Config fixers
 let g:ale_fixers = {
