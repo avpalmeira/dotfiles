@@ -359,11 +359,11 @@ let g:ale_fix_on_save = 1
 let @p = 'f[ya[poj0'
 
 " Save exprs to blank file
-let @t = '$hyi'poj0'
+let @t = '$hyi''poj0'
 
 " After translating exprs, put them translated side by side its keys
 let @b = 'y$$a pj0j'
 
 " At last, insert translations into its language php file
-let @r = '"iyi[W"oy$/i$hhpj0j0'
+let @r = '"iyi[Wy$/i$hhpj0j0'
 
