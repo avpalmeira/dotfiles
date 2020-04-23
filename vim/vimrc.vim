@@ -49,6 +49,8 @@ set numberwidth=5
 " Redraw screen only when it needs to, it improves macro speed
 set lazyredraw
 
+" Set hidden chars
+set listchars=tab:»-,eol:¬,space:·,trail:~,extends:⟩,precedes:⟨
 
 """""""""""""""""""""""""""""""
 ""         Behaviors          "
@@ -103,6 +105,12 @@ set foldmethod=indent
 set foldlevelstart=10
 set foldnestmax=10
 
+" Ignore files/directories from autocomplete
+set wildignore+=*/tmp/*
+set wildignore+=*/cache/
+
+" Use before pasting from clipboard to preserve indentation
+set pastetoggle=<F3>
 
 """""""""""""""""""""""""""""""
 ""      Map - Interface       "
@@ -133,12 +141,11 @@ function! RelativeToggle()
 endfunction
 nnoremap <silent><Leader>rn :call RelativeToggle()<CR>
 
-" Auto number toggle when switching windows
-augroup numbertoggle
-    autocmd!
-    autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu | set rnu | endif
-    autocmd BufLeave,FocusLost,InsertEnter,WinLeave * if &nu | set nornu | endif
-augroup END
+" Toggle view of hidden chars
+function! ToggleHiddenChars()
+    set list!
+endfunction
+nnoremap <F6> :call ToggleHiddenChars()<CR>
 
 
 """""""""""""""""""""""""""""""
@@ -176,7 +183,7 @@ nnoremap <Leader>t :tabnew<Space>
 nnoremap \ `
 
 " Go to last cursor position
-" nnoremap <Leader>\ <C-o>
+"nnoremap <Leader>\ <C-o>
 
 
 """""""""""""""""""""""""""""""
@@ -196,7 +203,7 @@ nnoremap <Leader><CR> O<Esc>o
 nnoremap <Leader>i o<CR>
 
 " Better space insertion
-" nnoremap <Leader><Space> a<Space>
+"nnoremap <Leader><Space> a<Space>
 
 " Better selection and indentation
 vnoremap < <gv
@@ -207,7 +214,7 @@ map <Leader>a ggVG
 vnoremap <Leader>s :sort<CR>
 
 " Source current file
-nnoremap <Leader>S :source %<CR>
+"nnoremap <Leader>S :source %<CR>
 
 " Redo
 nnoremap U <C-r>
@@ -232,7 +239,7 @@ vnoremap <leader>p "ap
 nnoremap <leader>y "ayiw
 vnoremap <leader>y "ay
 
-" TODO: Paste in command mode
+" TODO: Save from vim to clipboard
 
 
 """""""""""""""""""""""""""""""
@@ -347,6 +354,33 @@ let g:ale_fix_on_save = 1
 
 " Allow for ALE Hover to show balloons on mouse hover
 " let g:ale_set_balloons = 1
+
+
+""            CtrlP           "
+
+" CtrlP excludes git ignored files
+let g:ctrlp_user_command = [
+\	'.git/',
+\	'git --git-dir=%s/.git ls-files -oc --exclude-standard'
+\]
+
+
+"""""""""""""""""""""""""""""""
+""        Autocommands        "
+"""""""""""""""""""""""""""""""
+
+" Auto number toggle when switching windows
+augroup numbertoggle
+    autocmd!
+    autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu | set rnu | endif
+    autocmd BufLeave,FocusLost,InsertEnter,WinLeave * if &nu | set nornu | endif
+augroup END
+
+" Automatic reloading of .vimrc
+autocmd! bufwritepost .vimrc source %
+
+" Update dir to current file
+autocmd BufEnter * silent! cd %:p:h
 
 
 """""""""""""""""""""""""""""""
