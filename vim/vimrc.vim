@@ -194,6 +194,9 @@ nnoremap \ `
 nnoremap <BS> d0
 nnoremap <Leader><BS> cc<ESC>
 
+" Delete line break
+nnoremap <Del> k$J
+
 " Use enter and backspace to create line w/o leaving normal mode
 nnoremap <Leader>o o<ESC>
 nnoremap <Leader>O O<ESC>
@@ -224,23 +227,24 @@ nnoremap U <C-r>
 ""    Map - Copy and Paste    "
 """""""""""""""""""""""""""""""
 
-" swap word on top of cursor to the one in default register
-nnoremap <leader>P viwp
+" Swap word on top of cursor to the one in default register
+nnoremap <Leader>P viwp
 
-" copy word to default register
-nnoremap <leader>Y yiw
+" Copy word to default register
+nnoremap <Leader>Y yiw
 
-" substitute word on top of cursor / selection
+" Substitute word on top of cursor / selection
 " by the one in alternative (a) register
-nnoremap <leader>p viw"ap
-vnoremap <leader>p "ap
+nnoremap <Leader>p viw"ap
+vnoremap <Leader>p "ap
 
-" copy word / selection to alternative (a) register
-nnoremap <leader>y "ayiw
+" Copy word / selection to alternative (a) register
+nnoremap <Leader>y "ayiw
 vnoremap <leader>y "ay
 
-" TODO: Save from vim to clipboard
-
+" Save from vim to clipboard
+vmap <Leader>xy :!xclip -f -sel clip<CR>
+map <Leader>xp mz:-1r !xclip -o -sel clip<CR>`z
 
 """""""""""""""""""""""""""""""
 ""    Map - Save and Quit     "
