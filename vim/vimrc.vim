@@ -265,6 +265,26 @@ nnoremap <Leader>x :x<CR>
 
 
 """""""""""""""""""""""""""""""
+""        Map - Buffers       "
+"""""""""""""""""""""""""""""""
+
+" To open a new empty buffer
+nmap <leader>be :enew<cr>
+
+" Move to the next buffer
+nmap <leader>. :bnext<CR>
+
+" Move to the previous buffer
+nmap <leader>, :bprevious<CR>
+
+" Close the current buffer and move to the previous one
+nmap <leader>bq :bp <BAR> bd #<CR>
+
+" Show all open buffers and their status
+nmap <leader>bl :ls<CR>
+
+
+"""""""""""""""""""""""""""""""
 ""       Map - Plugins        "
 """""""""""""""""""""""""""""""
 
