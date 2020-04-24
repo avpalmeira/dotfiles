@@ -105,9 +105,9 @@ set foldmethod=indent
 set foldlevelstart=10
 set foldnestmax=10
 
-" Ignore files/directories from autocomplete
-set wildignore+=*/tmp/*
-set wildignore+=*/cache/
+" Ignore files/directories from fuzzy finder and autocomplete
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+set wildignore+=*/cache/*
 
 " Use before pasting from clipboard to preserve indentation
 set pastetoggle=<F3>
@@ -299,7 +299,7 @@ nnoremap <C-b> :Bookmark<Space>
 ""      Config - Plugins      "
 """""""""""""""""""""""""""""""
 
-""      NERDTree Configs      "
+""          NERDTree          "
 
 " Sync open file with NERDTree
 " Check if NERDTree is open or active
@@ -342,7 +342,7 @@ endfunction
 autocmd BufEnter * call CloseWhenTheresOnlyNERDTree()
 
 
-""         ALE Configs        "
+""             ALE            "
 
 " Enable completion where available
 let g:ale_completion_enabled = 1
@@ -370,6 +370,14 @@ let g:ctrlp_user_command = [
 \	'.git/',
 \	'git --git-dir=%s/.git ls-files -oc --exclude-standard'
 \]
+
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/](\.(git|svn)|build)$',
+  \ 'file': '\v\.(exe|dll|so|class|png|jpg|jpeg)$',
+  \}
+
+" Use the nearest .git directory as the cwd
+let g:ctrlp_working_path_mode = 'r'
 
 
 """""""""""""""""""""""""""""""
