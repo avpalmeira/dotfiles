@@ -17,7 +17,7 @@ set history=500
 set undolevels=500
 
 " Enable mouse support
-" set mouse=a
+set mouse=a
 
 " Load up all of plugins
 if filereadable(expand("~/.vimrc.bundles"))
@@ -111,6 +111,9 @@ set wildignore+=*/cache/
 
 " Use before pasting from clipboard to preserve indentation
 set pastetoggle=<F3>
+
+" Set buffer switching behavior
+set switchbuf=usetab,newtab
 
 """""""""""""""""""""""""""""""
 ""      Map - Interface       "
