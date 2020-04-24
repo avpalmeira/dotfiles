@@ -217,7 +217,7 @@ map <Leader>a ggVG
 vnoremap <Leader>s :sort<CR>
 
 " Source current file
-"nnoremap <Leader>S :source %<CR>
+nnoremap <Leader>S :source %<CR>
 
 " Redo
 nnoremap U <C-r>
