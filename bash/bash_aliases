@@ -22,6 +22,9 @@ alias re='reboot'
 alias dev='cd ~/local-dev'
 alias dot='cd ~/dotfiles'
 
+# Projects
+alias clique='cd ~/local-dev/izepay/clique'
+
 # Edit config files
 alias cfv='vim ~/.vimrc'
 alias cfb='vim ~/.bashrc'
