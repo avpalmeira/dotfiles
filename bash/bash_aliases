@@ -37,9 +37,10 @@ alias cfhs='vim ~/homestead/Homestead.yaml'
 alias cfh='sudo vim /etc/hosts'
 
 # Tmux commands
-alias tmn='tmux new -s'
+alias tms='tmux new -s'
+alias tmw='tmux new-window -n'
 alias tma='tmux attach -t'
-alias tms='tmux switch -t'
+alias tmx='tmux switch -t'
 alias tmr='tmux rename-session'
 alias tml='tmux ls'
 
