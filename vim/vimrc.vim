@@ -107,7 +107,7 @@ set foldnestmax=10
 
 " Ignore files/directories from fuzzy finder and autocomplete
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
-set wildignore+=*/cache/*
+set wildignore+=*/cache/*,*/vendor/*
 
 " Use before pasting from clipboard to preserve indentation
 set pastetoggle=<F3>
@@ -272,10 +272,10 @@ nnoremap <Leader>x :x<CR>
 nmap <leader>be :enew<cr>
 
 " Move to the next buffer
-nmap <leader>. :bnext<CR>
+nmap <leader>bn :bnext<CR>
 
 " Move to the previous buffer
-nmap <leader>, :bprevious<CR>
+nmap <leader>bm :bprevious<CR>
 
 " Close the current buffer and move to the previous one
 nmap <leader>bq :bp <BAR> bd #<CR>
