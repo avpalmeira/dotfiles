@@ -27,6 +27,7 @@ alias clique='cd ~/local-dev/izepay/clique'
 
 # Edit config files
 alias cfv='vim ~/.vimrc'
+alias cft='vim ~/.tmux.conf'
 alias cfb='vim ~/.bashrc'
 alias cfa='vim ~/.bash_aliases'
 alias cfg='vim ~/.gitconfig'
@@ -34,6 +35,13 @@ alias cfm='vim ~/.Xmodmap'
 alias cfx='vim ~/.xsessionrc'
 alias cfhs='vim ~/homestead/Homestead.yaml'
 alias cfh='sudo vim /etc/hosts'
+
+# Tmux commands
+alias tmn='tmux new -s'
+alias tma='tmux attach -t'
+alias tms='tmux switch -t'
+alias tmr='tmux rename-session'
+alias tml='tmux ls'
 
 # Python commands
 alias venv2='virtualenv -p python2 env'
