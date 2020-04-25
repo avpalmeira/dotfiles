@@ -31,7 +31,7 @@ endif
 
 " Set colorscheme
 syntax on
-colorscheme dracula
+colorscheme crayon
 
 " Show status and cursor position below window
 set ruler
