@@ -1,12 +1,2 @@
-# set PATH
-export JAVA_HOME=$HOME/java/jdk8
-export ANDROID_HOME=$HOME/Android/Sdk
-export ANDROID_SDK_ROOT=$ANDROID_HOME
-
-export PATH=$PATH:$ANDROID_HOME/emulator
-export PATH=$PATH:$ANDROID_HOME/tools
-export PATH=$PATH:$ANDROID_HOME/tools/bin
-export PATH=$PATH:$ANDROID_HOME/platform-tools
-
 # make it read .bashrc
 case $- in *i*) . ~/.bashrc;; esac
