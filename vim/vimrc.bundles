@@ -34,6 +34,10 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'dense-analysis/ale'
+Plug 'mattn/emmet-vim'
+
+" Handle sessions
+Plug 'tpope/vim-obsession'
 
 " Better git integration
 Plug 'Xuyuanp/nerdtree-git-plugin'
