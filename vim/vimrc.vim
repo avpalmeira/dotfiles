@@ -416,7 +416,7 @@ let g:ctrlp_working_path_mode = 'r'
 ""            Emmet           "
 
 " Redifine trigger key
-let g:user_emmet_leader_key='<C-q>'
+" let g:user_emmet_leader_key='<C-q>'
 
 
 """""""""""""""""""""""""""""""
