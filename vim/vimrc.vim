@@ -33,6 +33,13 @@ endif
 syntax on
 colorscheme crayon
 
+" Set vertical column
+set colorcolumn=82
+hi ColorColumn ctermbg=darkred
+
+" Set bg color to transparent
+hi Normal guibg=NONE ctermbg=NONE
+
 " Show status and cursor position below window
 set ruler
 set laststatus=2
@@ -52,6 +59,7 @@ set lazyredraw
 " Set hidden chars
 set listchars=tab:»-,eol:¬,space:·,trail:~,extends:⟩,precedes:⟨
 
+
 """""""""""""""""""""""""""""""
 ""         Behaviors          "
 """""""""""""""""""""""""""""""
@@ -65,7 +73,6 @@ set wrap
 set linebreak
 set textwidth=0
 set wrapmargin=0
-set colorcolumn=82
 
 " Tabs settings
 set expandtab
@@ -114,6 +121,7 @@ set pastetoggle=<F3>
 
 " Set buffer switching behavior
 set switchbuf=usetab,newtab
+
 
 """""""""""""""""""""""""""""""
 ""      Map - Interface       "
@@ -188,6 +196,10 @@ nnoremap \ `
 " Go to last cursor position
 "nnoremap <Leader>\ <C-o>
 
+" j/k will move virtual lines (lines that wrap)
+noremap <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
+noremap <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
+
 
 """""""""""""""""""""""""""""""
 ""        Map - Editing       "
@@ -248,6 +260,7 @@ vnoremap <leader>y "ay
 " Save from vim to clipboard
 vmap <Leader>xy :!xclip -f -sel clip<CR>
 map <Leader>xp mz:-1r !xclip -o -sel clip<CR>`z
+
 
 """""""""""""""""""""""""""""""
 ""    Map - Save and Quit     "
@@ -398,6 +411,12 @@ let g:ctrlp_custom_ignore = {
 
 " Use the nearest .git directory as the cwd
 let g:ctrlp_working_path_mode = 'r'
+
+
+""            Emmet           "
+
+" Redifine trigger key
+let g:user_emmet_leader_key='<C-q>'
 
 
 """""""""""""""""""""""""""""""
