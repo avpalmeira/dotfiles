@@ -59,6 +59,9 @@ set lazyredraw
 " Set hidden chars
 set listchars=tab:»-,eol:¬,space:·,trail:~,extends:⟩,precedes:⟨
 
+" Add jbuilder syntax highlighting
+au BufNewFile,BufRead *.json.jbuilder set ft=ruby
+
 
 """""""""""""""""""""""""""""""
 ""         Behaviors          "
@@ -124,6 +127,24 @@ set switchbuf=usetab,newtab
 
 
 """""""""""""""""""""""""""""""
+""        Autocommands        "
+"""""""""""""""""""""""""""""""
+
+" Auto number toggle when switching windows
+augroup numbertoggle
+    autocmd!
+    autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu | set rnu | endif
+    autocmd BufLeave,FocusLost,InsertEnter,WinLeave * if &nu | set nornu | endif
+augroup END
+
+" Automatic reloading of .vimrc
+autocmd! bufwritepost .vimrc source %
+
+" Update dir to current file
+autocmd BufEnter * silent! cd %:p:h
+
+
+"""""""""""""""""""""""""""""""
 ""      Map - Interface       "
 """""""""""""""""""""""""""""""
 
@@ -173,7 +194,7 @@ vnoremap <tab> %
 " Folding shortcuts
 nnoremap <Leader>z zA
 vnoremap <Leader>z zA
-autocmd BufRead * normal zR
+" autocmd BufRead * normal zR
 
 " Navigate quicker to buffer extremes
 nnoremap <Leader>l $
@@ -417,24 +438,6 @@ let g:ctrlp_working_path_mode = 'r'
 
 " Redifine trigger key
 " let g:user_emmet_leader_key='<C-q>'
-
-
-"""""""""""""""""""""""""""""""
-""        Autocommands        "
-"""""""""""""""""""""""""""""""
-
-" Auto number toggle when switching windows
-augroup numbertoggle
-    autocmd!
-    autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu | set rnu | endif
-    autocmd BufLeave,FocusLost,InsertEnter,WinLeave * if &nu | set nornu | endif
-augroup END
-
-" Automatic reloading of .vimrc
-autocmd! bufwritepost .vimrc source %
-
-" Update dir to current file
-autocmd BufEnter * silent! cd %:p:h
 
 
 """""""""""""""""""""""""""""""
