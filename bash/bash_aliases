@@ -2,6 +2,7 @@
 
 # Terminal
 alias c='clear'
+alias chzsh='chsh -s $(which zsh)'
 
 # Navigation
 alias h='cd ~'
