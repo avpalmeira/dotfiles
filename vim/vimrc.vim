@@ -299,23 +299,34 @@ nnoremap <Leader>x :x<CR>
 
 
 """""""""""""""""""""""""""""""
-""        Map - Buffers       "
+""    Map - Tabs & Buffers    "
 """""""""""""""""""""""""""""""
 
-" To open a new empty buffer
-nmap <leader>be :enew<cr>
+" To open a new empty buffer/tab
+nmap -b :enew<CR>
+nmap ,t :tabnew<CR>
 
-" Move to the next buffer
-nmap <leader>bn :bnext<CR>
+" To open file in a new buffer/tab
+nmap -e :e<Space>
+nmap ,e :tabnew<Space>
 
-" Move to the previous buffer
-nmap <leader>bm :bprevious<CR>
+" Move to the next buffer/tab
+nmap -n :bnext<CR>
+nmap ,n :tabnext<CR>
+
+" Go to first/last tab
+nmap ,f :tabfirst<CR>
+nmap ,l :tablast<CR>
+
+" Move to the previous buffer/tab
+nmap -m :bprevious<CR>
+nmap ,m :tabprev<CR>
 
 " Close the current buffer and move to the previous one
-nmap <leader>bq :bp <BAR> bd #<CR>
+nmap -q :bp <BAR> bd #<CR>
 
 " Show all open buffers and their status
-nmap <leader>bl :ls<CR>
+nmap -l :ls<CR>
 
 
 """""""""""""""""""""""""""""""
