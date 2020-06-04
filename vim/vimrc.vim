@@ -311,22 +311,29 @@ nmap -e :e<Space>
 nmap ,e :tabnew<Space>
 
 " Move to the next buffer/tab
-nmap -n :bnext<CR>
-nmap ,n :tabnext<CR>
+nmap -m :bnext<CR>
+nmap ,m :tabnext<CR>
 
 " Go to first/last tab
 nmap ,f :tabfirst<CR>
 nmap ,l :tablast<CR>
 
 " Move to the previous buffer/tab
-nmap -m :bprevious<CR>
-nmap ,m :tabprev<CR>
+nmap -n :bp<CR>
+nmap ,n :tabp<CR>
 
-" Close the current buffer and move to the previous one
-nmap -q :bp <BAR> bd #<CR>
+" Close the current buffer
+nmap -q :bd<CR>
+
+" Close current/all tab(s)
+nmap ,q :tabc<CR>
+nmap ,Q :tabdo q<CR>
 
 " Show all open buffers and their status
 nmap -l :ls<CR>
+
+" Edit all buffers as tabs
+nmap -a :tab ba<CR>
 
 
 """""""""""""""""""""""""""""""
