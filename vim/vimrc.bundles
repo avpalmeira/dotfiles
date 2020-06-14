@@ -15,6 +15,9 @@ call plug#begin('~/.vim/plugged')
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 
+" Syntax highlighting
+Plug 'maxmellon/vim-jsx-pretty'
+
 " Color schemes
 Plug 'sjl/badwolf'
 Plug 'nightsense/stellarized'
@@ -36,6 +39,10 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'dense-analysis/ale'
 Plug 'mattn/emmet-vim'
+
+" Snippets
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 
 " Handle sessions
 Plug 'tpope/vim-obsession'
