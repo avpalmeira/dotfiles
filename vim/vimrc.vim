@@ -80,9 +80,9 @@ set wrapmargin=0
 " Tabs settings
 set expandtab
 set shiftround
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
 set autoindent
 filetype indent on
 
@@ -208,9 +208,6 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
-" Create new tab
-nnoremap <Leader>t :tabnew<Space>
-
 " Go to marked line
 nnoremap \ `
 
@@ -322,8 +319,8 @@ nmap ,l :tablast<CR>
 nmap -n :bp<CR>
 nmap ,n :tabp<CR>
 
-" Close the current buffer
-nmap -q :bd<CR>
+" Close the current buffer and go to previous
+nmap -q :bp <BAR> bd #<CR>
 
 " Close current/all tab(s)
 nmap ,q :tabc<CR>
@@ -456,6 +453,12 @@ let g:ctrlp_working_path_mode = 'r'
 
 " Redifine trigger key
 " let g:user_emmet_leader_key='<C-q>'
+
+
+""           Snippets         "
+
+" Trigger configuration
+let g:UltiSnipsExpandTrigger="<C-l>"
 
 
 """""""""""""""""""""""""""""""
