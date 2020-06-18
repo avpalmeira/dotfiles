@@ -23,6 +23,10 @@ keycode 20 = bar question bar question backslash
 keycode 12 = 3 slash 3 slash threesuperior
 ! " > @
 keycode 11 = 2 at 2 at twosuperior
+! ’ > ?
+keycode 51 = numbersign apostrophe numbersign apostrophe question
+! – > =
+keycode 61 = minus underscore minus underscore equal
 
 !
 ! Adapt to use keys in portuguese alphabet
