@@ -423,6 +423,7 @@ set omnifunc=ale#completion#OmniFunc
 let g:ale_fixers = {
 \   '*': ['trim_whitespace'],
 \   'javascript': ['prettier', 'eslint'],
+\   'ruby': ['standardrb'],
 \}
 
 " Set this variable to 1 to fix files when you save them.
@@ -439,6 +440,7 @@ let g:ctrlp_user_command = [
 \	'.git/',
 \	'git --git-dir=%s/.git ls-files -oc --exclude-standard'
 \]
+
 
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/](\.(git|svn)|build)$',
@@ -459,6 +461,12 @@ let g:ctrlp_working_path_mode = 'r'
 
 " Trigger configuration
 let g:UltiSnipsExpandTrigger="<C-l>"
+
+
+""            Airline         "
+
+" Set airline theme
+let g:airline_theme='badwolf'
 
 
 """""""""""""""""""""""""""""""
