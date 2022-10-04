@@ -1,26 +1,48 @@
 [alias]
-	co = checkout
-	st = status
-	br = branch
-	brs = branch -a
-	brd = branch -d
-	cob = checkout -b
-	last = log -1 HEAD
-	visual = !gitk
-	a = add -A
-	ci = commit
-	cm = commit -m
-	ac = !git add -A && git commit -m
-	px = push -u origin HEAD
-	pl = pull
-	curr = rev-parse --abbrev-ref HEAD
-	hist = log --color --graph --pretty=format:'%C(magenta)%h%Creset - %C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-	conflist = config --global --list
-	authorlog = "!f() { git log --author=\"$1\"; }; f"
+  co = checkout
+  st = status
+  br = branch
+  brs = branch -a
+  brd = branch -D
+  cob = checkout -b
+  last = log -1 HEAD
+  visual = !gitk
+  a = add -A
+  ci = commit
+  cm = commit -m
+  ca = commit --amend --no-edit
+  cp = cherry-pick
+  ac = !git add -A && git commit -m
+  aca= !git add -A && git commit --amend
+  ri = rebase -i
+  ra = rebase --abort
+  rc = rebase --continue
+  arc= !git add -A && git rebase --continue
+  px = push -u origin HEAD
+  pxf = push -f origin HEAD
+  pl = pull
+  sub = submodule update --init --recursive
+  curr = rev-parse --abbrev-ref HEAD
+  changes = diff --stat -r
+  lnew = log ORIG_HEAD.. --stat --no-merges
+  undo = reset --soft HEAD^
+  hist = log --color --graph --pretty=format:'%C(magenta)%h%Creset - %C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+  conflist = config --global --list
+  authorlog = "!f() { git log --author=\"$1\"; }; f"
 
 [core]
-    autocrlf = input
+  autocrlf = input
+  editor = vim
 
-[credential]
-    helper = cache --timeout 7200
+[color]
+  ui = true
+
+[include]
+  path = ~/.local/gitconfig.local
+
+[push]
+  default = current
+
+[pull]
+  rebase = true
 

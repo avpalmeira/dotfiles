@@ -24,7 +24,8 @@ alias dev='cd ~/local-dev'
 alias dot='cd ~/dotfiles'
 
 # Projects
-alias clique='cd ~/local-dev/izepay/clique'
+alias omg='cd ~/local-dev/omega'
+alias omc='cd ~/local-dev/omega/monorepo'
 
 # Edit config files
 alias cfv='vim ~/.vimrc'
@@ -34,8 +35,15 @@ alias cfa='vim ~/.bash_aliases'
 alias cfg='vim ~/.gitconfig'
 alias cfm='vim ~/.Xmodmap'
 alias cfx='vim ~/.xsessionrc'
-alias cfhs='vim ~/homestead/Homestead.yaml'
 alias cfh='sudo vim /etc/hosts'
+
+# Git commands
+alias g='git'
+alias gst='git status'
+alias ga='git add .'
+alias gac='git add . && git commit -m'
+alias gco='git checkout'
+alias gcob='git checkout --branch'
 
 # Tmux commands
 alias tms='tmux new -s'
@@ -46,13 +54,13 @@ alias tmr='tmux rename-session'
 alias tml='tmux ls'
 
 # Python commands
-alias venv2='virtualenv -p python2 env'
-alias venv3='virtualenv -p python3 env'
-alias act='source env/bin/activate'
-alias deact='deactivate'
+# alias venv2='virtualenv -p python2 env'
+# alias venv3='virtualenv -p python3 env'
+# alias act='source env/bin/activate'
+# alias deact='deactivate'
 
 # Vagrant commands
-alias hsup='hs up'
-alias hssh='hs ssh'
-alias hstop='hs halt'
+# alias hsup='hs up'
+# alias hssh='hs ssh'
+# alias hstop='hs halt'
 

@@ -17,17 +17,19 @@ Plug 'junegunn/limelight.vim'
 
 " Syntax highlighting
 Plug 'maxmellon/vim-jsx-pretty'
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
 
 " Color schemes
 Plug 'sjl/badwolf'
 Plug 'nightsense/stellarized'
 Plug 'junegunn/seoul256.vim'
 Plug 'dylanaraps/crayon'
+Plug 'morhetz/gruvbox'
 Plug 'dracula/vim', {'as': 'dracula'}
 
 " Better navigation in vim
 Plug 'scrooloose/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'easymotion/vim-easymotion'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'mbbill/undotree'
@@ -41,18 +43,22 @@ Plug 'dense-analysis/ale'
 Plug 'mattn/emmet-vim'
 
 " Snippets
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
+" Plug 'SirVer/ultisnips'
+" Plug 'honza/vim-snippets'
 
 " Handle sessions
 Plug 'tpope/vim-obsession'
 
-" Terminal commands in vim
+" Git helpers
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
-Plug 'mileszs/ack.vim'
 
 " Status line
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+
+" Analytics
+Plug 'wakatime/vim-wakatime'
 
 call plug#end()

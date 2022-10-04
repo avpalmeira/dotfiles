@@ -1,0 +1,11 @@
+# make it read .bashrc
+case $- in *i*) . ~/.bashrc;; esac
+
+# Enable tools to be able to Load the AWS Config
+export AWS_SDK_LOAD_CONFIG=true
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+if which pyenv > /dev/null; then eval "$(pyenv init --path)"; fi
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+if which pyenv > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
+
