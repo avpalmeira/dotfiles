@@ -21,6 +21,7 @@
   px = push -u origin HEAD
   pxf = push -f origin HEAD
   pl = pull
+  cl = clean -df
   sub = submodule update --init --recursive
   curr = rev-parse --abbrev-ref HEAD
   changes = diff --stat -r
