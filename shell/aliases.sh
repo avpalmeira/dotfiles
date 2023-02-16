@@ -12,13 +12,11 @@ alias b="cd .."
 alias p="cd -"
 
 # Most used paths
-export DEV_PATH="$HOME/dev/source"
 export LOCAL="$HOME/.local"
 
 # Frequent folders shortcuts
 alias dot="cd $HOME/dotfiles"
 alias dotl="cd $HOME/.local/dotfiles"
-alias dev="cd $DEV_PATH"
 alias loc="cd $LOCAL"
 
 # Edit config files

@@ -23,6 +23,10 @@ bindkey -v
 # Enable reverse search
 bindkey "^R" history-incremental-search-backward
 
+# Enable shell completion
+autoload -U bashcompinit
+bashcompinit
+
 # Load aliases
 [ -f ~/.shell/aliases.sh ] && . ~/.shell/aliases.sh
 
