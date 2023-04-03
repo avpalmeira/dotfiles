@@ -17,3 +17,8 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 # set path for flutter
 # export PATH=$PATH:$HOME/snap/flutter/common/flutter/bin
 
+# enable Python builds to use the Homebrew-provided installations of zlib and libsodium
+export SODIUM_INSTALL=system
+export LIBSODIUM_MAKE_ARGS=-j8
+export GRPC_PYTHON_BUILD_SYSTEM_OPENSSL=1
+export GRPC_PYTHON_BUILD_SYSTEM_ZLIB=1
