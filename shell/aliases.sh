@@ -12,7 +12,7 @@ alias b="cd .."
 alias p="cd -"
 
 # Most used paths
-export LOCAL="$HOME/.local"
+LOCAL="$HOME/.local"
 
 # Frequent folders shortcuts
 alias dot="cd $HOME/dotfiles"
@@ -32,5 +32,7 @@ alias cfk="vim ~/.config/karabiner/karabiner.json"
 
 # Dev shortcuts
 alias depcheck="madge --image graph.svg ./"
-alias ports="lsof -i -P | grep -v 'sdm' | grep -i 'listen'"
+alias ports="lsof -nP -iTCP -sTCP:LISTEN"
+# Docker
+alias dstopall='docker stop $(docker ps -a -q)'
 
