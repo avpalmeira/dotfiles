@@ -44,6 +44,11 @@ load-nvmrc
 source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
 source /opt/homebrew/opt/chruby/share/chruby/auto.sh
 
+# Set up rbenv
+# export PATH="$HOME/.rbenv/bin:$PATH"
+# eval "$(rbenv init -)"
+# export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
+
 # Set up pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
@@ -56,4 +61,45 @@ eval "$(register-python-argcomplete pipx)"
 # Set up rust
 export RUST_DIR="$HOME/.cargo"
 export PATH="$RUST_DIR/bin:$PATH"
+
+# Define java and android vars
+export JAVA_HOME=$HOME/java/jdk8
+export ANDROID_HOME=$HOME/android/sdk
+export ANDROID_SDK_ROOT=$ANDROID_HOME
+
+# Set path for android
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+
+# Set path for flutter
+# export PATH=$PATH:$HOME/snap/flutter/common/flutter/bin
+
+#####################################
+## DYNAMIC LINKS FOR BREW PACKAGES ##
+#####################################
+
+# Enable Python builds to use the Homebrew-provided installations of zlib and libsodium
+export SODIUM_INSTALL=system
+export LIBSODIUM_MAKE_ARGS=-j8
+export GRPC_PYTHON_BUILD_SYSTEM_OPENSSL=1
+export GRPC_PYTHON_BUILD_SYSTEM_ZLIB=1
+
+HOMEBREW_PREFIX="$(brew --prefix)"
+
+# Configure dynamic loader (non statically linked libraries) to look for brew installed objects
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOMEBREW_PREFIX/lib
+export LIBRARY_PATH=$LIBRARY_PATH:$HOMEBREW_PREFIX/lib
+export C_INCLUDE_PATH=$C_INCLUDE_PATH:$HOMEBREW_PREFIX/include
+
+# Tell pycurl to use openssl instead of MacOS's default LibreSSL
+export PYCURL_SSL_LIBRARY=openssl
+
+# Use poetry bin folder
+export PATH="$HOME/.poetry/bin:$PATH"
+
+# Define necessary compiler flag so that packages builds and statically links against brew installed libraries
+export LDFLAGS="-L$HOMEBREW_PREFIX/opt/zlib/lib -L$HOMEBREW_PREFIX/opt/openssl@3/lib -L$HOMEBREW_PREFIX/opt/curl/lib"
+export CPPFLAGS="-I$HOMEBREW_PREFIX/opt/zlib/include -I$HOMEBREW_PREFIX/opt/openssl@3/include -I$HOMEBREW_PREFIX/opt/curl/include"
 
