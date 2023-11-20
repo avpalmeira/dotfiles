@@ -27,6 +27,7 @@
   changes = diff --stat -r
   lnew = log ORIG_HEAD.. --stat --no-merges
   undo = reset --soft HEAD^
+  hundo = reset --hard HEAD^
   unstage = restore --staged .
   hist = log --color --graph --pretty=format:'%C(magenta)%h%Creset - %C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
   conflist = config --global --list
