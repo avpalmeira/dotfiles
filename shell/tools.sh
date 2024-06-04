@@ -80,6 +80,10 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 ## DYNAMIC LINKS FOR BREW PACKAGES ##
 #####################################
 
+# Set PATH, MANPATH, etc., for Homebrew.
+eval "$(/opt/homebrew/bin/brew shellenv)"
+export PATH="/opt/homebrew/bin:${PATH}"
+
 # Enable Python builds to use the Homebrew-provided installations of zlib and libsodium
 export SODIUM_INSTALL=system
 export LIBSODIUM_MAKE_ARGS=-j8
@@ -102,4 +106,3 @@ export PATH="$HOME/.poetry/bin:$PATH"
 # Define necessary compiler flag so that packages builds and statically links against brew installed libraries
 export LDFLAGS="-L$HOMEBREW_PREFIX/opt/zlib/lib -L$HOMEBREW_PREFIX/opt/openssl@3/lib -L$HOMEBREW_PREFIX/opt/curl/lib"
 export CPPFLAGS="-I$HOMEBREW_PREFIX/opt/zlib/include -I$HOMEBREW_PREFIX/opt/openssl@3/include -I$HOMEBREW_PREFIX/opt/curl/include"
-
