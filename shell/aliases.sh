@@ -3,7 +3,7 @@
 # Terminal
 alias c="clear"
 alias reload="exec zsh"
-alias lsize="du -skh * | sort -h"
+alias lsize="du -skh *"
 alias chbash='chsh -s $(which bash)'
 
 # Navigation

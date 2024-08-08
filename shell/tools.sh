@@ -56,7 +56,7 @@ if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 if which pyenv > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
 
 # Enable completion for pipx:
-eval "$(register-python-argcomplete pipx)"
+#eval "$(register-python-argcomplete pipx)"
 
 # Set up rust
 export RUST_DIR="$HOME/.cargo"
