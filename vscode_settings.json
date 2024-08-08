@@ -1,0 +1,192 @@
+{
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": false,
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.smoothScrolling": true,
+  "editor.fontLigatures": true,
+  "editor.suggestSelection": "first",
+  "editor.cursorStyle": "underline",
+  "editor.tabSize": 2,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.detectIndentation": true,
+  "editor.fontFamily": "'Fira Code', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+  "editor.rulers": [80],
+  "editor.snippetSuggestions": "top",
+  "editor.wordBasedSuggestions": "off",
+  "editor.suggest.localityBonus": true,
+  "editor.acceptSuggestionOnCommitCharacter": false,
+  "editor.cursorBlinking": "smooth",
+  "editor.renderWhitespace": "boundary",
+  "editor.lineNumbers": "relative",
+  // "editor.glyphMargin": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.suggestSelection": "recentlyUsed",
+    "editor.suggest.showKeywords": false
+  },
+  "files.defaultLanguage": "{activeEditorLanguage}",
+  "javascript.validate.enable": false,
+  "json.sortOnSave.enable": true,
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/coverage": true,
+    "**/dist": true,
+    "**/build": true,
+    "**/.build": true,
+    "**/.gh-pages": true
+  },
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  "keyboard.dispatch": "keyCode",
+  "typescript.disableAutomaticTypeAcquisition": true,
+  "GitLive.Issue tracker integration": "Disabled",
+  "jestrunner.codeLensSelector": "**/*.{test,spec,e2e-spec}.{js,jsx,ts,tsx}",
+  "jest.autoRun": "off",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "terminal.integrated.defaultProfile.windows": "Git Bash",
+  "files.exclude": {
+    "**/.classpath": true,
+    "**/.project": true,
+    "**/.settings": true,
+    "**/.factorypath": true
+  },
+  "security.workspace.trust.untrustedFiles": "open",
+  "terminal.integrated.defaultProfile.linux": "zsh",
+  "terminal.integrated.cursorStyle": "underline",
+  "bracketPairColorizer.depreciation-notice": false,
+  "npm-scripts.showStartNotification": false,
+  "git.autofetch": true,
+  "git.confirmSync": false,
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "workbench.colorTheme": "Tokyo Night Storm",
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.editorAssociations": {
+    "*.md": "vscode.markdown.preview.editor"
+  },
+  "workbench.editor.splitInGroupLayout": "vertical",
+  "workbench.colorCustomizations": {
+    "editorCursor.foreground": "#ebb0ffb0",
+    "editorCursor.background": "#135564",
+    "editor.selectionBackground": "#135564",
+    "terminalCursor.foreground": "#ebb0ffb0"
+  },
+
+  /* VIM SETTINGS */
+  "vim.cursorStylePerMode.insert": "line",
+  "vim.cursorStylePerMode.normal": "underline",
+  "vim.cursorStylePerMode.visual": "block",
+  "vim.searchHighlightColor": "#135564",
+  "vim.searchHighlightTextColor": "#fffff0",
+  "vim.searchMatchColor": "#fffff0",
+  "vim.searchMatchTextColor": "#135564",
+  // "vim.disableExtension": true,
+  "vim.leader": "<space>",
+  "vim.easymotion": true,
+  "vim.normalModeKeyBindings": [
+    {
+      "before": ["leader", "w"],
+      "commands": ["workbench.action.files.save"]
+    },
+    {
+      "before": ["leader", "q"],
+      "commands": [":q!"]
+    },
+    {
+      "before": ["K"],
+      "commands": ["lineBreakInsert"],
+      "silent": true
+    },
+    {
+      "before": ["leader", "o"],
+      "after": ["o", "<esc>"]
+    },
+    {
+      "before": ["leader", "O"],
+      "after": ["O", "<esc>"]
+    },
+    {
+      "before": ["leader", "a"],
+      "after": ["g", "g", "V", "G"]
+    },
+    {
+      "before": ["<bs>"],
+      "after": ["d", "^"]
+    },
+    {
+      "before": ["U"],
+      "after": ["<C-r>"]
+    },
+    {
+      "before": ["<tab>"],
+      "after": ["%"]
+    },
+    {
+      "before": ["\\"],
+      "after": ["`"]
+    },
+    {
+      "before": ["L"],
+      "after": ["$"]
+    },
+    {
+      "before": ["H"],
+      "after": ["^"]
+    }
+  ],
+  "vim.visualModeKeyBindings": [
+    {
+      "before": [">"],
+      "commands": ["editor.action.indentLines"]
+    },
+    {
+      "before": ["<"],
+      "commands": ["editor.action.outdentLines"]
+    },
+    {
+      //required extension: sort-lines
+      "before": ["leader", "s"],
+      "commands": ["sortLines.sortLines"]
+    },
+    {
+      "before": ["<tab>"],
+      "after": ["%"]
+    }
+  ],
+  "[dart]": {
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "editor.selectionHighlight": false,
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
+    "editor.suggestSelection": "first",
+    "editor.tabCompletion": "onlySnippets",
+    "editor.wordBasedSuggestions": "off"
+  },
+  "python.formatting.provider": "black",
+  "python.languageServer": "Pylance",
+  "python.analysis.diagnosticMode": "workspace",
+  "togglequotes.chars": ["\"", "'", "`"],
+  "[python]": {
+    "editor.formatOnType": true,
+    "editor.defaultFormatter": "ms-python.python"
+  },
+  "[typescriptreact]": {
+    "togglequotes.chars": ["\"", "'", "`"]
+  },
+  "workbench.editor.empty.hint": "hidden",
+  "editor.minimap.enabled": false,
+  "redhat.telemetry.enabled": true
+}
+
+// enable press and hold keys for VS Code running this command in the terminal:
+// defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
+
