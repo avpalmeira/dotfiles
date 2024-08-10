@@ -72,6 +72,9 @@ hdiutil attach Docker.dmg
 hdiutil detach /Volumes/Docker
 rm Docker.dmg
 
+echo "Installing oh-my-zsh..."
+REPO=avpalmeira/oh-my-zsh sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
 echo "Generating an RSA token for GitHub"
 mkdir -p ~/.ssh
 touch ~/.ssh/config
