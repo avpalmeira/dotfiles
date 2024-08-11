@@ -57,6 +57,7 @@ brew install --cask \
     tableplus \
     whatsapp \
     karabiner-elements \
+    kit \
     maccy \
     loop \
     discord \
