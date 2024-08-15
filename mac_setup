@@ -94,6 +94,7 @@ ln -s "${HOME}/dotfiles/shell/zsh/zsh-pre-tools.sh" "${HOME}/.shell/zsh-pre-tool
 ln -s "${HOME}/dotfiles/shell/aliases.sh" "${HOME}/.shell/aliases.sh"
 ln -s "${HOME}/dotfiles/shell/tools.sh" "${HOME}/.shell/tools.sh"
 ln -s "${HOME}/dotfiles/gitconfig" "${HOME}/.gitconfig"
+mkdir -p ~/.vim
 ln -s "${HOME}/dotfiles/vim/plugins.install.vim" "${HOME}/.vim/plugins.install"
 ln -s "${HOME}/dotfiles/vim/plugins.config.vim" "${HOME}/.vim/plugins.config"
 ln -s "${HOME}/dotfiles/vim/vimrc.vim" "${HOME}/.vimrc"
@@ -125,7 +126,7 @@ defaults write com.apple.LaunchServices LSQuarantine -bool false
 defaults write com.apple.CrashReporter DialogType -string "none"
 
 # Never go into computer sleep mode
-sudo systemsetup -setcomputersleep Off > /dev/null
+#sudo systemsetup -setcomputersleep Off > /dev/null
 
 # Disable automatic capitalization as it’s annoying when typing code
 defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false
