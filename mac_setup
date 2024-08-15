@@ -86,6 +86,9 @@ echo "Host *\n AddKeysToAgent yes\n UseKeychain yes\n IdentityFile ~/.ssh/id_ed2
 eval "$(ssh-agent -s)"
 echo "run 'pbcopy < ~/.ssh/id_ed25519.pub' and paste that into GitHub"
 
+echo "Setting up oh-my-zsh"
+REMOTE=git@github.com:avpalmeira/oh-my-zsh sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
 echo "Cloning and setting up dotfiles"
 git clone git@github.com:avpalmeira/dotfiles.git "${HOME}/dotfiles"
 ln -s "${HOME}/dotfiles/shell/zsh/zshrc" "${HOME}/.zshrc"
@@ -128,8 +131,11 @@ defaults write com.apple.LaunchServices LSQuarantine -bool false
 # Disable the crash reporter
 defaults write com.apple.CrashReporter DialogType -string "none"
 
+# Disable special character suggestion when holding keyboard key
+defaults write -g ApplePressAndHoldEnabled -bool false
+
 # Never go into computer sleep mode
-#sudo systemsetup -setcomputersleep Off > /dev/null
+# sudo systemsetup -setcomputersleep Off > /dev/null
 
 # Disable automatic capitalization as it’s annoying when typing code
 defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false
@@ -150,7 +156,7 @@ defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 defaults write /Library/Preferences/com.apple.loginwindow showInputMenu -bool true
 
 # Set the timezone; see `sudo systemsetup -listtimezones` for other values
-sudo systemsetup -settimezone "America/Recife" > /dev/null
+# sudo systemsetup -settimezone "America/Recife" > /dev/null
 
 
 ###############################################################################

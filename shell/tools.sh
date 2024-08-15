@@ -12,7 +12,7 @@ if [ -f ~/.fzf.zsh ]; then
 fi
 
 # Set up thefuck
-eval $(thefuck --alias)
+#eval $(thefuck --alias)
 
 # Set up NVM
 export NVM_DIR="$HOME/.nvm"
@@ -41,8 +41,8 @@ add-zsh-hook chpwd load-nvmrc
 load-nvmrc
 
 # Set up chruby
-source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
-source /opt/homebrew/opt/chruby/share/chruby/auto.sh
+# source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
+# source /opt/homebrew/opt/chruby/share/chruby/auto.sh
 
 # Set up rbenv
 # export PATH="$HOME/.rbenv/bin:$PATH"
@@ -59,19 +59,19 @@ if which pyenv > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
 #eval "$(register-python-argcomplete pipx)"
 
 # Set up rust
-export RUST_DIR="$HOME/.cargo"
-export PATH="$RUST_DIR/bin:$PATH"
+# export RUST_DIR="$HOME/.cargo"
+# export PATH="$RUST_DIR/bin:$PATH"
 
 # Define java and android vars
-export JAVA_HOME=$HOME/java/jdk8
-export ANDROID_HOME=$HOME/android/sdk
-export ANDROID_SDK_ROOT=$ANDROID_HOME
+# export JAVA_HOME=$HOME/java/jdk8
+# export ANDROID_HOME=$HOME/android/sdk
+# export ANDROID_SDK_ROOT=$ANDROID_HOME
 
 # Set path for android
-export PATH=$PATH:$ANDROID_HOME/emulator
-export PATH=$PATH:$ANDROID_HOME/tools
-export PATH=$PATH:$ANDROID_HOME/tools/bin
-export PATH=$PATH:$ANDROID_HOME/platform-tools
+# export PATH=$PATH:$ANDROID_HOME/emulator
+# export PATH=$PATH:$ANDROID_HOME/tools
+# export PATH=$PATH:$ANDROID_HOME/tools/bin
+# export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 # Set path for flutter
 # export PATH=$PATH:$HOME/snap/flutter/common/flutter/bin
@@ -98,11 +98,11 @@ export LIBRARY_PATH=$LIBRARY_PATH:$HOMEBREW_PREFIX/lib
 export C_INCLUDE_PATH=$C_INCLUDE_PATH:$HOMEBREW_PREFIX/include
 
 # Tell pycurl to use openssl instead of MacOS's default LibreSSL
-export PYCURL_SSL_LIBRARY=openssl
+# export PYCURL_SSL_LIBRARY=openssl
 
 # Use poetry bin folder
-export PATH="$HOME/.poetry/bin:$PATH"
+# export PATH="$HOME/.poetry/bin:$PATH"
 
 # Define necessary compiler flag so that packages builds and statically links against brew installed libraries
-export LDFLAGS="-L$HOMEBREW_PREFIX/opt/zlib/lib -L$HOMEBREW_PREFIX/opt/openssl@3/lib -L$HOMEBREW_PREFIX/opt/curl/lib"
-export CPPFLAGS="-I$HOMEBREW_PREFIX/opt/zlib/include -I$HOMEBREW_PREFIX/opt/openssl@3/include -I$HOMEBREW_PREFIX/opt/curl/include"
+# export LDFLAGS="-L$HOMEBREW_PREFIX/opt/zlib/lib -L$HOMEBREW_PREFIX/opt/openssl@3/lib -L$HOMEBREW_PREFIX/opt/curl/lib"
+# export CPPFLAGS="-I$HOMEBREW_PREFIX/opt/zlib/include -I$HOMEBREW_PREFIX/opt/openssl@3/include -I$HOMEBREW_PREFIX/opt/curl/include"
