@@ -87,7 +87,7 @@ eval "$(ssh-agent -s)"
 echo "run 'pbcopy < ~/.ssh/id_ed25519.pub' and paste that into GitHub"
 
 echo "Setting up oh-my-zsh"
-REMOTE=git@github.com:avpalmeira/oh-my-zsh sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+REMOTE=git@github.com:avpalmeira/ohmyzsh sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 echo "Cloning and setting up dotfiles"
 git clone git@github.com:avpalmeira/dotfiles.git "${HOME}/dotfiles"
