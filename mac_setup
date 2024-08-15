@@ -28,16 +28,21 @@ mkdir -p "${HOME}/source"
 echo "Installing homebrew..."
 # install homebrew https://brew.sh
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+(echo; echo 'eval "$(/opt/homebrew/bin/brew shellenv)"') >> $HOME/.zprofile
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 echo "brew installing stuff..."
-brew install \
-    git \  # the default VCS of the world
-    gh \  # github in the terminal
-    tldr \  # simplified and community-driven man pages
-    tree  # really handy for listing out directories in text
+# git: the default VCS of the world
+# gh: github in the terminal
+# tldr: simplified and community-driven man pages
+# tree: really handy for listing out directories in text
+brew install git gh tldr tree
 
 echo "Installing node (via nvm)..."
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 nvm install stable
 
 echo "node --version: $(node --version)"
@@ -73,16 +78,13 @@ hdiutil attach Docker.dmg
 hdiutil detach /Volumes/Docker
 rm Docker.dmg
 
-echo "Installing oh-my-zsh..."
-REPO=avpalmeira/oh-my-zsh sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
 echo "Generating an RSA token for GitHub"
 mkdir -p ~/.ssh
 touch ~/.ssh/config
 ssh-keygen -t ed25519 -C "antonio@palmeira.tech"
 echo "Host *\n AddKeysToAgent yes\n UseKeychain yes\n IdentityFile ~/.ssh/id_ed25519" | tee ~/.ssh/config
 eval "$(ssh-agent -s)"
-echo "run 'pbcopy < ~/.ssh/id_rsa.pub' and paste that into GitHub"
+echo "run 'pbcopy < ~/.ssh/id_ed25519.pub' and paste that into GitHub"
 
 echo "Cloning and setting up dotfiles"
 git clone git@github.com:avpalmeira/dotfiles.git "${HOME}/dotfiles"
