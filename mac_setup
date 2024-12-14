@@ -36,7 +36,7 @@ echo "brew installing stuff..."
 # gh: github in the terminal
 # tldr: simplified and community-driven man pages
 # tree: really handy for listing out directories in text
-brew install git gh tldr tree
+brew install git gh tldr tree postgresql
 
 echo "Installing node (via nvm)..."
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
@@ -123,7 +123,7 @@ fi
 ###############################################################################
 
 # Disable the sound effects on boot
-sudo nvram SystemAudioVolume=" "
+sudo nvram StartupMute=%01
 
 # Disable the “Are you sure you want to open this application?” dialog
 defaults write com.apple.LaunchServices LSQuarantine -bool false
@@ -173,9 +173,15 @@ defaults write com.apple.frameworks.diskimages auto-open-ro-root -bool true
 defaults write com.apple.frameworks.diskimages auto-open-rw-root -bool true
 defaults write com.apple.finder OpenWindowForNewRemovableDisk -bool true
 
-# Use column view in all Finder windows by default
-# Four-letter codes for the other view modes: `icnv`, `clmv`, `Flwv`, `Nlsv`
-#defaults write com.apple.finder FXPreferredViewStyle -string "clmv"
+# Set default view style in all Finder windows
+# Four-letter codes for the view modes:
+#  icnv: icon view
+#  clmv: column view
+#  glyv: galery view
+#  Nlsv: list view
+defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
+# Set list view to sort files by kind
+plutil -replace StandardViewSettings.ListViewSettings.sortColumn -string "kind" ~/Library/Preferences/com.apple.finder.plist
 
 
 ###############################################################################
