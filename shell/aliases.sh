@@ -29,6 +29,7 @@ alias cfal="vim $LOCAL/aliases.local.sh"
 alias cfv="vim ~/.vimrc"
 alias cfvl="vim $LOCAL/vimrc.local"
 alias cfk="vim ~/.config/karabiner/karabiner.json"
+alias cftl="vim $LOCAL/tools.local.sh"
 
 # Dev shortcuts
 alias depcheck="madge --image graph.svg ./"
