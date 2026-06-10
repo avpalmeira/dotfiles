@@ -59,14 +59,13 @@ brew install --cask \
     figma \
     onedrive \
     tradingview \
-    tableplus \
+    beekeeper-studio \
     whatsapp \
     karabiner-elements \
     kit \
     maccy \
     loop \
     discord \
-    zoom \
     spotify \
     slack
 
