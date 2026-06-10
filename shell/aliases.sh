@@ -11,6 +11,14 @@ alias h="cd"
 alias b="cd .."
 alias p="cd -"
 
+# Better replacements
+command -v bat &> /dev/null && alias cat=bat
+command -v rg &> /dev/null && alias grep=rg
+command -v fd &> /dev/null && alias find=fd
+command -v eza &> /dev/null && alias ls=eza
+command -v eza &> /dev/null && alias la="eza -la"
+command -v z &> /dev/null && alias cd=z
+
 # Most used paths
 LOCAL="$HOME/.local"
 
@@ -36,4 +44,3 @@ alias depcheck="madge --image graph.svg ./"
 alias ports="lsof -nP -iTCP -sTCP:LISTEN"
 # Docker
 alias dstopall='docker stop $(docker ps -a -q)'
-
