@@ -2,7 +2,7 @@
 
 # Terminal
 alias c="clear"
-alias reload="exec zsh"
+alias reload="source $HOME/.zshrc"
 alias lsize="du -skh *"
 alias chbash='chsh -s $(which bash)'
 
