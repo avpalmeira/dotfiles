@@ -4,6 +4,9 @@
 # Set default theme
 ZSH_THEME="agnoster"
 
+# Load local config
+[ -f ~/.local/zshrc.local ] && . ~/.local/zshrc.local
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -23,9 +26,6 @@ bindkey "^R" history-incremental-search-backward
 # Enable shell completion
 autoload -U bashcompinit
 bashcompinit
-
-# Load local config
-[ -f ~/.local/zshrc.local ] && . ~/.local/zshrc.local
 
 # Load aliases
 [ -f ~/.shell/aliases.sh ] && . ~/.shell/aliases.sh
