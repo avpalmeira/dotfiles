@@ -13,8 +13,6 @@ alias p="cd -"
 
 # Better replacements
 command -v bat &> /dev/null && alias cat=bat
-command -v rg &> /dev/null && alias grep=rg
-command -v fd &> /dev/null && alias find=fd
 command -v eza &> /dev/null && alias ls=eza
 command -v eza &> /dev/null && alias la="eza -la"
 command -v z &> /dev/null && alias cd=z
