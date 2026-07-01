@@ -15,7 +15,7 @@ alias p="cd -"
 command -v bat &> /dev/null && alias cat=bat
 command -v eza &> /dev/null && alias ls=eza
 command -v eza &> /dev/null && alias la="eza -la"
-command -v z &> /dev/null && alias cd=z
+command -v zoxide &> /dev/null && alias cd=z
 
 # Most used paths
 LOCAL="$HOME/.local"
