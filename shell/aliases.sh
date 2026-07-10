@@ -13,9 +13,9 @@ alias p="cd -"
 
 # Better replacements
 command -v bat &> /dev/null && alias cat=bat
-command -v eza &> /dev/null && alias ls=eza
+command -v eza &> /dev/null && alias ls="eza --icons --grid --group-directories-first"
 command -v eza &> /dev/null && alias la="eza -la"
-command -v zoxide &> /dev/null && alias cd=z
+command -v z &> /dev/null && alias cd=z
 
 # Most used paths
 LOCAL="$HOME/.local"
@@ -35,6 +35,7 @@ alias cfal="vim $LOCAL/aliases.local.sh"
 alias cfv="vim ~/.vimrc"
 alias cfvl="vim $LOCAL/vimrc.local"
 alias cfk="vim ~/.config/karabiner/karabiner.json"
+alias cft="vim ~/.shell/tools.sh"
 alias cftl="vim $LOCAL/tools.local.sh"
 
 # Dev shortcuts
