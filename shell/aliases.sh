@@ -15,7 +15,6 @@ alias p="cd -"
 command -v bat &> /dev/null && alias cat=bat
 command -v eza &> /dev/null && alias ls="eza --icons --grid --group-directories-first"
 command -v eza &> /dev/null && alias la="eza -la"
-command -v z &> /dev/null && alias cd=z
 
 # Most used paths
 LOCAL="$HOME/.local"
@@ -41,5 +40,6 @@ alias cftl="vim $LOCAL/tools.local.sh"
 # Dev shortcuts
 alias depcheck="madge --image graph.svg ./"
 alias ports="lsof -nP -iTCP -sTCP:LISTEN"
+
 # Docker
 alias dstopall='docker stop $(docker ps -a -q)'
