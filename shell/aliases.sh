@@ -33,9 +33,10 @@ alias cfa="vim ~/.shell/aliases.sh"
 alias cfal="vim $LOCAL/aliases.local.sh"
 alias cfv="vim ~/.vimrc"
 alias cfvl="vim $LOCAL/vimrc.local"
-alias cfk="vim ~/.config/karabiner/karabiner.json"
+alias cfk="vim ~/.config/kitty/kitty.conf"
 alias cft="vim ~/.shell/tools.sh"
 alias cftl="vim $LOCAL/tools.local.sh"
+alias cfh="vim ~/.config/herdr/config.toml"
 
 # Dev shortcuts
 alias depcheck="madge --image graph.svg ./"
