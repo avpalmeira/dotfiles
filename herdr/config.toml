@@ -1,0 +1,26 @@
+onboarding = false
+
+[theme]
+name = "catppuccin"
+auto_switch = true
+dark_name = "catppuccin"
+light_name = "catppuccin-latte"
+
+[ui]
+agent_panel_sort = "spaces"
+show_agent_labels_on_pane_borders = true
+
+[ui.toast]
+delivery = "system"
+
+[keys]
+prefix = "ctrl+a"
+
+# View Management + Navigation
+split_vertical = "prefix+\\"
+previous_tab = "prefix+,"
+next_tab = "prefix+."
+previous_workspace = "prefix+n"
+next_workspace = "prefix+m"
+switch_workspace = "prefix+shift+1..9"
+
