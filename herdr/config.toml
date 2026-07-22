@@ -9,6 +9,8 @@ light_name = "catppuccin-latte"
 [ui]
 agent_panel_sort = "spaces"
 show_agent_labels_on_pane_borders = true
+mouse_capture = true
+mouse_scroll_lines = 3
 
 [ui.toast]
 delivery = "system"
@@ -23,4 +25,3 @@ next_tab = "prefix+."
 previous_workspace = "prefix+n"
 next_workspace = "prefix+m"
 switch_workspace = "prefix+shift+1..9"
-
