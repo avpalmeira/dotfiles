@@ -15,6 +15,9 @@ mouse_scroll_lines = 3
 [ui.toast]
 delivery = "system"
 
+[ui.sound.agents]
+claude = "off"
+
 [keys]
 prefix = "ctrl+a"
 
