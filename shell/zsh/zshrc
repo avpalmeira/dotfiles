@@ -1,6 +1,28 @@
 # Setup pre tools: tools that should be loaded at top of .zshrc
 [ -f ~/.shell/zsh-pre-tools.sh ] && . ~/.shell/zsh-pre-tools.sh
 
+#""""""""""""""""""""""""""""""
+#"     Themes and plugins     "
+#""""""""""""""""""""""""""""""
+
+# Set name of the theme to load --- if set to "random", it will
+# load a random theme each time oh-my-zsh is loaded, in which case,
+# to know which specific one was loaded, run: echo $RANDOM_THEME
+# ZSH_THEME="kphoen"
+ZSH_THEME="arrow"
+
+# Standard plugins can be found in $ZSH/plugins/
+# Custom plugins may be added to $ZSH_CUSTOM/plugins/
+plugins=(
+  bgnotify
+  git
+  node
+  npm
+  fzf
+  zsh-syntax-highlighting
+  zsh-autosuggestions
+)
+
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 source $ZSH/oh-my-zsh.sh
