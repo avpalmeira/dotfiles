@@ -38,6 +38,15 @@ alias cft="vim ~/.shell/tools.sh"
 alias cftl="vim $LOCAL/tools.local.sh"
 alias cfh="vim ~/.config/herdr/config.toml"
 
+# Git -- everything else goes through the aliases in gitconfig (g st, g ac, ...)
+alias g="git"
+alias gst="git status"
+alias gsta="git stash push"
+alias gstl="git stash list"
+alias gstp="git stash pop"
+alias gstc="git stash clear"
+alias gsts="git stash show --patch"
+
 # Dev shortcuts
 alias depcheck="madge --image graph.svg ./"
 alias ports="lsof -nP -iTCP -sTCP:LISTEN"
