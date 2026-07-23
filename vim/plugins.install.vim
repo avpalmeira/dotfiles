@@ -27,6 +27,7 @@ Plug 'junegunn/seoul256.vim'
 Plug 'dylanaraps/crayon'
 Plug 'morhetz/gruvbox'
 Plug 'dracula/vim', {'as': 'dracula'}
+Plug 'catppuccin/vim', { 'as': 'catppuccin' }
 
 " Better navigation in vim
 Plug 'scrooloose/nerdtree'
@@ -62,3 +63,8 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'wakatime/vim-wakatime'
 
 call plug#end()
+
+" Auto-install any declared-but-missing plugins on startup
+if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
