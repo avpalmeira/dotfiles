@@ -14,7 +14,7 @@ alias p="cd -"
 # Better replacements
 command -v bat &> /dev/null && alias cat=bat
 command -v eza &> /dev/null && alias ls="eza --icons --grid --group-directories-first"
-command -v eza &> /dev/null && alias la="eza -la"
+command -v eza &> /dev/null && alias la="eza -a --icons --grid --group-directories-first"
 
 # Most used paths
 LOCAL="$HOME/.local"
