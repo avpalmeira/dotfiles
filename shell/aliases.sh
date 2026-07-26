@@ -21,11 +21,13 @@ command -v eza &> /dev/null && alias lt="eza -lT -L"
 
 # Most used paths
 LOCAL="$HOME/.local"
+CONFIG="$HOME/.config"
 
 # Frequent folders shortcuts
 alias dot="cd $HOME/dotfiles"
 alias dotl="cd $HOME/.local/dotfiles"
 alias loc="cd $LOCAL"
+alias conf="cd $CONFIG"
 
 # Edit config files
 alias cfz="vim ~/.zshrc"
@@ -36,11 +38,11 @@ alias cfa="vim ~/.shell/aliases.sh"
 alias cfal="vim $LOCAL/aliases.local.sh"
 alias cfv="vim ~/.vimrc"
 alias cfvl="vim $LOCAL/vimrc.local"
-alias cfk="vim ~/.config/kitty/kitty.conf"
-alias cfka="vim ~/.config/karabiner/karabiner.json"
+alias cfk="vim $CONFIG/kitty/kitty.conf"
+alias cfka="vim $CONFIG/karabiner/karabiner.json"
 alias cft="vim ~/.shell/tools.sh"
 alias cftl="vim $LOCAL/tools.local.sh"
-alias cfh="vim ~/.config/herdr/config.toml"
+alias cfh="vim $CONFIG/herdr/config.toml"
 
 # Git -- everything else goes through the aliases in gitconfig (g st, g ac, ...)
 alias g="git"
