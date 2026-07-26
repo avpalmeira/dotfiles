@@ -15,6 +15,9 @@ alias p="cd -"
 command -v bat &> /dev/null && alias cat=bat
 command -v eza &> /dev/null && alias ls="eza --icons --grid --group-directories-first"
 command -v eza &> /dev/null && alias la="eza -a --icons --grid --group-directories-first"
+command -v eza &> /dev/null && alias l="eza -l --group-directories-first"
+command -v eza &> /dev/null && alias lh="eza -lh --group-directories-first"
+command -v eza &> /dev/null && alias lt="eza -lT -L"
 
 # Most used paths
 LOCAL="$HOME/.local"
@@ -34,6 +37,7 @@ alias cfal="vim $LOCAL/aliases.local.sh"
 alias cfv="vim ~/.vimrc"
 alias cfvl="vim $LOCAL/vimrc.local"
 alias cfk="vim ~/.config/kitty/kitty.conf"
+alias cfka="vim ~/.config/karabiner/karabiner.json"
 alias cft="vim ~/.shell/tools.sh"
 alias cftl="vim $LOCAL/tools.local.sh"
 alias cfh="vim ~/.config/herdr/config.toml"
