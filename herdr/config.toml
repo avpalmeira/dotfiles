@@ -19,7 +19,7 @@ delivery = "system"
 claude = "off"
 
 [keys]
-prefix = "ctrl+a"
+prefix = "super+a"
 
 # View Management + Navigation
 split_vertical = "prefix+\\"
