@@ -23,6 +23,8 @@ prefix = "super+a"
 
 # View Management + Navigation
 split_vertical = "prefix+\\"
+previous_agent = "prefix+;"
+next_agent = "prefix+'"
 previous_tab = "prefix+,"
 next_tab = "prefix+."
 previous_workspace = "prefix+n"
