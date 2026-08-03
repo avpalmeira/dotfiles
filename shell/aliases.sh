@@ -43,6 +43,7 @@ alias cfka="vim $CONFIG/karabiner/karabiner.json"
 alias cft="vim ~/.shell/tools.sh"
 alias cftl="vim $LOCAL/tools.local.sh"
 alias cfh="vim $CONFIG/herdr/config.toml"
+alias cfs="vim $CONFIG/starship.toml"
 
 # Git -- everything else goes through the aliases in gitconfig (g st, g ac, ...)
 alias g="git"
