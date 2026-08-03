@@ -137,5 +137,7 @@ nnoremap <C-b> :Bookmark<Space>
 " Disable EasyMotion default mappings
 "let g:EasyMotion_do_mapping = 0
 
-
+" Search with fzf
+nnoremap <C-f> :Lines<CR>
+nnoremap <C-r> :RG<CR>
 
